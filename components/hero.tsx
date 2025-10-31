@@ -29,8 +29,7 @@ export default function Hero() {
               </Link>
               <Link
                 href="/become-guide"
-                className="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white transition text-center"
-                style={{ color: "#ffffff" }}
+                className="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white transition text-center hover:text-gray-500"
               >
                 Become a Guide
               </Link>

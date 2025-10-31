@@ -43,7 +43,7 @@ export default function TopDestinations() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Top Destinations</h2>
-          <p className="text-xl text-muted max-w-2xl">
+          <p className="text-xl text-gray-500 max-w-2xl">
             Explore the most popular destinations with verified local guides
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function TopDestinations() {
                   <p className="text-blue-100">{dest.region}</p>
                 </div>
               </div>
-              <div className="flex justify-between text-sm text-muted">
+              <div className="flex justify-between text-sm text-gray-500">
                 <span>{dest.guides} Guides</span>
                 <span>{dest.tours} Tours</span>
               </div>
