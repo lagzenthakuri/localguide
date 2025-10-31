@@ -1,0 +1,690 @@
+{
+  "destinations": [
+    {
+      "id": 1,
+      "name": "Sagarmatha (Mt. Everest)",
+      "country": "Solukhumbu, Nepal",
+      "image": "/everest.webp",
+      "rating": 4.9,
+      "reviews": 2847,
+      "description": "Mount Everest, known locally as Sagarmatha, is the world's highest peak at 8,848.86 meters. The Everest region offers breathtaking mountain views, Sherpa culture, and challenging trekking routes including the famous Everest Base Camp trek.",
+      "bestTimeToVisit": "March to May, September to November",
+      "duration": "12-16 days",
+      "distance": "138 km from Kathmandu (flight to Lukla)",
+      "elevation": "5,364 m (Base Camp)",
+      "highlights": [
+        "World's highest mountain peak",
+        "Sherpa culture and monasteries",
+        "Stunning Himalayan panoramas",
+        "Sagarmatha National Park (UNESCO)",
+        "Tengboche Monastery"
+      ],
+      "gallery": ["/everest1.jpg", "/everest2.jpg", "/everest3.jpg"],
+      "guides": [
+        {
+          "id": 1,
+          "name": "Raj Singh",
+          "image": "/male-guide.jpg",
+          "rating": 4.9,
+          "packageCount": 12,
+          "priceFrom": 85
+        },
+        {
+          "id": 5,
+          "name": "Deepak Gurung",
+          "image": "/male-guide.jpg",
+          "rating": 4.8,
+          "packageCount": 14,
+          "priceFrom": 95
+        }
+      ],
+      "hotels": [
+        { "name": "Hotel Everest View", "rating": 4.5, "pricePerNight": "$150+" },
+        { "name": "Yeti Mountain Home", "rating": 4.3, "pricePerNight": "$120+" },
+        { "name": "Namche Hotel", "rating": 4.0, "pricePerNight": "$80+" }
+      ],
+      "attractions": [
+        {
+          "name": "Everest Base Camp",
+          "distance": "65 km from Lukla",
+          "description": "Starting point for Everest climbers with stunning mountain views"
+        },
+        {
+          "name": "Kala Patthar",
+          "distance": "70 km from Lukla",
+          "description": "Best viewpoint for Everest sunrise at 5,644m"
+        },
+        {
+          "name": "Namche Bazaar",
+          "distance": "25 km from Lukla",
+          "description": "Main trading hub and acclimatization point"
+        }
+      ],
+      "tips": [
+        "Acclimatize properly to avoid altitude sickness",
+        "Get travel insurance that covers high-altitude trekking",
+        "Book flights to Lukla well in advance",
+        "Hire experienced guides and porters",
+        "Carry proper trekking gear and warm clothing"
+      ],
+      "coordinates": { "lat": 27.9881, "lng": 86.9250 }
+    },
+    {
+      "id": 2,
+      "name": "Kathmandu Valley",
+      "country": "Kathmandu, Nepal",
+      "image": "/kathmandu valley.jpg",
+      "rating": 4.7,
+      "reviews": 3421,
+      "description": "Kathmandu Valley is a cultural treasure trove with seven UNESCO World Heritage Sites. Experience ancient temples, medieval palaces, vibrant markets, and living goddess traditions in Nepal's historic capital.",
+      "bestTimeToVisit": "October to April",
+      "duration": "3-5 days",
+      "distance": "City center",
+      "elevation": "1,400 m",
+      "highlights": [
+        "Pashupatinath Temple",
+        "Boudhanath Stupa",
+        "Swayambhunath (Monkey Temple)",
+        "Kathmandu Durbar Square",
+        "Living Goddess Kumari"
+      ],
+      "gallery": ["/kathmandu1.jpg", "/kathmandu2.jpg", "/kathmandu3.jpg"],
+      "guides": [
+        {
+          "id": 2,
+          "name": "Priya Sharma",
+          "image": "/female-guide.jpg",
+          "rating": 4.8,
+          "packageCount": 10,
+          "priceFrom": 40
+        }
+      ],
+      "hotels": [
+        { "name": "Dwarika's Hotel", "rating": 5, "pricePerNight": "$200+" },
+        { "name": "Hotel Shanker", "rating": 4.5, "pricePerNight": "$120+" },
+        { "name": "Kathmandu Guest House", "rating": 4.0, "pricePerNight": "$50+" }
+      ],
+      "attractions": [
+        {
+          "name": "Patan Durbar Square",
+          "distance": "8 km",
+          "description": "Ancient royal palace with exquisite Newari architecture"
+        },
+        {
+          "name": "Bhaktapur",
+          "distance": "13 km",
+          "description": "Medieval city with pottery squares and ancient temples"
+        },
+        {
+          "name": "Thamel",
+          "distance": "2 km",
+          "description": "Tourist hub with shops, restaurants, and nightlife"
+        }
+      ],
+      "tips": [
+        "Dress modestly when visiting temples",
+        "Bargain in local markets",
+        "Try authentic Newari cuisine",
+        "Book heritage walks with local guides",
+        "Visit early morning for better experience"
+      ],
+      "coordinates": { "lat": 27.7172, "lng": 85.3240 }
+    },
+    {
+      "id": 3,
+      "name": "Pokhara Valley",
+      "country": "Pokhara, Nepal",
+      "image": "/pokhara valley.webp",
+      "rating": 4.8,
+      "reviews": 2903,
+      "description": "Pokhara is Nepal's adventure capital and second-largest city. Surrounded by the Annapurna range, it offers serene lakes, cave explorations, paragliding, and serves as the gateway to Annapurna treks.",
+      "bestTimeToVisit": "September to November, March to May",
+      "duration": "3-4 days",
+      "distance": "200 km from Kathmandu",
+      "elevation": "827 m",
+      "highlights": [
+        "Phewa Lake boating",
+        "Paragliding with mountain views",
+        "World Peace Pagoda",
+        "Sarangkot sunrise viewpoint",
+        "Davis Falls and Gupteshwor Cave"
+      ],
+      "gallery": ["/pokhara1.jpg", "/pokhara2.jpg", "/pokhara3.jpg"],
+      "guides": [
+        {
+          "id": 3,
+          "name": "Ramesh Chand",
+          "image": "/male-guide.jpg",
+          "rating": 4.9,
+          "packageCount": 15,
+          "priceFrom": 50
+        }
+      ],
+      "hotels": [
+        { "name": "Temple Tree Resort", "rating": 5, "pricePerNight": "$180+" },
+        { "name": "Hotel Barahi", "rating": 4.5, "pricePerNight": "$100+" },
+        { "name": "Lakeside Inn", "rating": 4.0, "pricePerNight": "$40+" }
+      ],
+      "attractions": [
+        {
+          "name": "Sarangkot",
+          "distance": "13 km",
+          "description": "Famous viewpoint for sunrise over Annapurna range"
+        },
+        {
+          "name": "International Mountain Museum",
+          "distance": "3 km",
+          "description": "Museum dedicated to Himalayan mountaineering history"
+        },
+        {
+          "name": "Begnas Lake",
+          "distance": "15 km",
+          "description": "Peaceful lake away from tourist crowds"
+        }
+      ],
+      "tips": [
+        "Book paragliding in advance during peak season",
+        "Rent bicycles to explore lakeside areas",
+        "Wake up early for Sarangkot sunrise",
+        "Try fresh fish from Phewa Lake",
+        "Bargain for boat rentals at the lake"
+      ],
+      "coordinates": { "lat": 28.2096, "lng": 83.9856 }
+    },
+    {
+      "id": 4,
+      "name": "Chitwan National Park",
+      "country": "Chitwan, Nepal",
+      "image": "/chitwan.jpg",
+      "rating": 4.7,
+      "reviews": 1876,
+      "description": "Chitwan National Park is Nepal's first national park and a UNESCO World Heritage Site. Home to endangered one-horned rhinoceros, Bengal tigers, and diverse wildlife, it offers jungle safaris and cultural experiences.",
+      "bestTimeToVisit": "October to March",
+      "duration": "2-3 days",
+      "distance": "146 km from Kathmandu",
+      "elevation": "150 m",
+      "highlights": [
+        "One-horned rhinoceros sightings",
+        "Jungle safari on elephant back",
+        "Canoe rides on Rapti River",
+        "Bird watching (500+ species)",
+        "Tharu cultural programs"
+      ],
+      "gallery": ["/chitwan1.jpg", "/chitwan2.jpg", "/chitwan3.jpg"],
+      "guides": [
+        {
+          "id": 4,
+          "name": "Anita Nepal",
+          "image": "/female-guide.jpg",
+          "rating": 4.7,
+          "packageCount": 8,
+          "priceFrom": 35
+        }
+      ],
+      "hotels": [
+        { "name": "Meghauli Serai", "rating": 5, "pricePerNight": "$400+" },
+        { "name": "Kasara Resort", "rating": 4.5, "pricePerNight": "$250+" },
+        { "name": "Hotel Wildlife Camp", "rating": 4.0, "pricePerNight": "$80+" }
+      ],
+      "attractions": [
+        {
+          "name": "Elephant Breeding Center",
+          "distance": "5 km",
+          "description": "Conservation center for endangered elephants"
+        },
+        {
+          "name": "Bis Hazari Tal",
+          "distance": "6 km",
+          "description": "Twenty thousand lakes area for bird watching"
+        },
+        {
+          "name": "Tharu Village",
+          "distance": "3 km",
+          "description": "Experience indigenous Tharu culture and traditions"
+        }
+      ],
+      "tips": [
+        "Wear neutral colors for jungle safari",
+        "Bring binoculars for bird watching",
+        "Book jeep safaris for better wildlife viewing",
+        "Stay quiet during safaris to spot animals",
+        "Respect wildlife and maintain safe distance"
+      ],
+      "coordinates": { "lat": 27.5291, "lng": 84.3542 }
+    },
+    {
+      "id": 5,
+      "name": "Lumbini",
+      "country": "Rupandehi, Nepal",
+      "image": "/lumbini.jpg",
+      "rating": 4.6,
+      "reviews": 1543,
+      "description": "Lumbini is the birthplace of Lord Buddha and a UNESCO World Heritage Site. This sacred pilgrimage site features ancient ruins, monasteries from various Buddhist traditions, and the sacred Maya Devi Temple.",
+      "bestTimeToVisit": "October to March",
+      "duration": "1-2 days",
+      "distance": "280 km from Kathmandu",
+      "elevation": "150 m",
+      "highlights": [
+        "Maya Devi Temple (Buddha's birthplace)",
+        "Sacred Bodhi Tree",
+        "Ashoka Pillar (249 BC)",
+        "International monasteries",
+        "Lumbini Museum"
+      ],
+      "gallery": ["/lumbini1.jpg", "/lumbini2.jpg", "/lumbini3.jpg"],
+      "guides": [
+        {
+          "id": 6,
+          "name": "Seema Paudel",
+          "image": "/female-guide.jpg",
+          "rating": 4.6,
+          "packageCount": 11,
+          "priceFrom": 38
+        }
+      ],
+      "hotels": [
+        { "name": "Hotel Lumbini Garden", "rating": 4.5, "pricePerNight": "$120+" },
+        { "name": "Buddha Maya Garden Hotel", "rating": 4.0, "pricePerNight": "$80+" },
+        { "name": "Hotel Peace Palace", "rating": 3.5, "pricePerNight": "$40+" }
+      ],
+      "attractions": [
+        {
+          "name": "World Peace Pagoda",
+          "distance": "2 km",
+          "description": "White peace pagoda with golden Buddha statue"
+        },
+        {
+          "name": "Tilaurakot",
+          "distance": "27 km",
+          "description": "Ancient kingdom where Buddha spent his childhood"
+        },
+        {
+          "name": "Kudan",
+          "distance": "5 km",
+          "description": "Where Buddha met his father after enlightenment"
+        }
+      ],
+      "tips": [
+        "Dress modestly and respectfully",
+        "Start early to avoid afternoon heat",
+        "Rent bicycles to explore the monastic zone",
+        "Meditate at peaceful monastery gardens",
+        "Respect the sacred atmosphere"
+      ],
+      "coordinates": { "lat": 27.4833, "lng": 83.2764 }
+    },
+    {
+      "id": 6,
+      "name": "Annapurna Base Camp",
+      "country": "Kaski, Nepal",
+      "image": "/annapurna base camp.jpg",
+      "rating": 4.9,
+      "reviews": 2234,
+      "description": "The Annapurna Base Camp trek takes you to the heart of the Annapurna sanctuary at 4,130 meters. Experience diverse landscapes, Gurung culture, hot springs, and 360-degree mountain views.",
+      "bestTimeToVisit": "March to May, September to November",
+      "duration": "7-12 days",
+      "distance": "42 km from Pokhara to trek start",
+      "elevation": "4,130 m (Base Camp)",
+      "highlights": [
+        "360-degree mountain amphitheater",
+        "Natural hot springs at Jhinu Danda",
+        "Gurung villages and culture",
+        "Rhododendron forests",
+        "Sunrise at Annapurna Base Camp"
+      ],
+      "gallery": ["/annapurna1.jpg", "/annapurna2.jpeg", "/annapurna3.jpg"],
+      "guides": [
+        {
+          "id": 3,
+          "name": "Ramesh Chand",
+          "image": "/male-guide.jpg",
+          "rating": 4.9,
+          "packageCount": 15,
+          "priceFrom": 75
+        },
+        {
+          "id": 5,
+          "name": "Deepak Gurung",
+          "image": "/male-guide.jpg",
+          "rating": 4.8,
+          "packageCount": 14,
+          "priceFrom": 80
+        }
+      ],
+      "hotels": [
+        { "name": "Annapurna Base Camp Lodge", "rating": 3.5, "pricePerNight": "$15-30" },
+        { "name": "Machhapuchhre Base Camp Lodge", "rating": 3.5, "pricePerNight": "$15-30" },
+        { "name": "Himalaya Hotel (Ghorepani)", "rating": 3.8, "pricePerNight": "$20-40" }
+      ],
+      "attractions": [
+        {
+          "name": "Poon Hill",
+          "distance": "Alternative viewpoint",
+          "description": "Famous sunrise viewpoint at 3,210m"
+        },
+        {
+          "name": "Jhinu Danda Hot Springs",
+          "distance": "On the route",
+          "description": "Natural hot springs perfect for relaxation"
+        },
+        {
+          "name": "Machhapuchhre Base Camp",
+          "distance": "2 km before ABC",
+          "description": "Base camp of the sacred fishtail mountain"
+        }
+      ],
+      "tips": [
+        "Train physically before the trek",
+        "Bring layers for temperature changes",
+        "Stay hydrated and walk slowly",
+        "Try local dal bhat for energy",
+        "Respect local customs and environment"
+      ],
+      "coordinates": { "lat": 28.5293, "lng": 83.8738 }
+    }
+  ],
+  "guides": [
+    {
+      "id": 1,
+      "name": "Raj Singh",
+      "experience": "8 years",
+      "location": "Sagarmatha (Mt. Everest)",
+      "specialization": "Trekking, Mountain Expeditions",
+      "languages": ["English", "Nepali", "Hindi"],
+      "rating": 4.9,
+      "reviews": 156,
+      "hourlyRate": 45,
+      "image": "/male-guide.jpg",
+      "verified": true,
+      "packages": 12,
+      "responseTime": "< 2 hours"
+    },
+    {
+      "id": 2,
+      "name": "Priya Sharma",
+      "experience": "6 years",
+      "location": "Kathmandu",
+      "specialization": "Cultural Tours, Heritage",
+      "languages": ["English", "Nepali", "German"],
+      "rating": 4.8,
+      "reviews": 142,
+      "hourlyRate": 40,
+      "image": "/female-guide.jpg",
+      "verified": true,
+      "packages": 10,
+      "responseTime": "< 1 hour"
+    },
+    {
+      "id": 3,
+      "name": "Ramesh Chand",
+      "experience": "12 years",
+      "location": "Pokhara",
+      "specialization": "Adventure, Paragliding",
+      "languages": ["English", "Nepali", "French"],
+      "rating": 4.9,
+      "reviews": 189,
+      "hourlyRate": 50,
+      "image": "/male-guide.jpg",
+      "verified": true,
+      "packages": 15,
+      "responseTime": "< 1.5 hours"
+    },
+    {
+      "id": 4,
+      "name": "Anita Nepal",
+      "experience": "5 years",
+      "location": "Chitwan",
+      "specialization": "Wildlife, Nature",
+      "languages": ["English", "Nepali"],
+      "rating": 4.7,
+      "reviews": 98,
+      "hourlyRate": 35,
+      "image": "/female-guide.jpg",
+      "verified": true,
+      "packages": 8,
+      "responseTime": "< 3 hours"
+    },
+    {
+      "id": 5,
+      "name": "Deepak Gurung",
+      "experience": "10 years",
+      "location": "Lukla",
+      "specialization": "High Altitude Trekking",
+      "languages": ["English", "Nepali", "Mandarin"],
+      "rating": 4.8,
+      "reviews": 176,
+      "hourlyRate": 55,
+      "image": "/male-guide.jpg",
+      "verified": true,
+      "packages": 14,
+      "responseTime": "< 4 hours"
+    },
+    {
+      "id": 6,
+      "name": "Seema Paudel",
+      "experience": "7 years",
+      "location": "Lumbini",
+      "specialization": "History Tours, Photography",
+      "languages": ["English", "Nepali", "Spanish"],
+      "rating": 4.6,
+      "reviews": 134,
+      "hourlyRate": 38,
+      "image": "/female-guide.jpg",
+      "verified": true,
+      "packages": 11,
+      "responseTime": "< 2.5 hours"
+    }
+  ],
+  "packages": [
+    {
+      "id": 1,
+      "name": "Everest Base Camp Trek",
+      "price": 85,
+      "duration": "14 days",
+      "destination": "Sagarmatha",
+      "destinationId": 1,
+      "rating": 4.8,
+      "reviews": 324,
+      "guideId": 1,
+      "image": "/everest.webp",
+      "type": "Adventure & Trekking",
+      "budgetRange": "$50-$100",
+      "daysRange": "7+ days",
+      "inclusions": [
+        "Professional Mountain Guide",
+        "Accommodation in mountain lodges",
+        "All meals (breakfast, lunch, dinner)",
+        "Trek permits and insurance",
+        "Oxygen backup (if needed)",
+        "Emergency evacuation support"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Fly to Lukla, Trek to Phakding",
+          "description": "Early morning flight to Lukla and trek to Phakding (2,610m)"
+        },
+        {
+          "day": 2,
+          "title": "Trek to Namche Bazaar",
+          "description": "Trek through beautiful forests to Namche Bazaar (3,440m)"
+        },
+        {
+          "day": 3,
+          "title": "Acclimatization Day",
+          "description": "Rest day in Namche for altitude acclimatization"
+        },
+        {
+          "day": 4,
+          "title": "Trek to Tengboche",
+          "description": "Visit famous Tengboche Monastery (3,860m)"
+        },
+        {
+          "day": 5,
+          "title": "Trek to Base Camp",
+          "description": "Finally reach Everest Base Camp (5,364m)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Kathmandu Heritage Tour",
+      "price": 65,
+      "duration": "6 hours",
+      "destination": "Kathmandu",
+      "destinationId": 2,
+      "rating": 4.7,
+      "reviews": 156,
+      "guideId": 2,
+      "image": "/kathmandu valley.jpg",
+      "type": "Cultural Experience",
+      "budgetRange": "$50-$100",
+      "daysRange": "1 day",
+      "inclusions": [
+        "Expert cultural guide",
+        "Transportation",
+        "Entrance fees to all sites",
+        "Traditional lunch",
+        "Hotel pickup and drop"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "UNESCO Heritage Sites Tour",
+          "description": "Visit Pashupatinath, Boudhanath, Swayambhunath, and Durbar Square"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Pokhara Lake Cruise & Adventure",
+      "price": 120,
+      "duration": "8 hours",
+      "destination": "Pokhara",
+      "destinationId": 3,
+      "rating": 4.9,
+      "reviews": 289,
+      "guideId": 3,
+      "image": "/pokhara valley.webp",
+      "type": "Relaxation",
+      "budgetRange": "$100-$150",
+      "daysRange": "1 day",
+      "inclusions": [
+        "Boat cruise on Phewa Lake",
+        "Paragliding experience",
+        "Lunch with lake view",
+        "Cave exploration",
+        "Transportation"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Lake and Adventure Day",
+          "description": "Boat cruise, paragliding, Davis Falls, and cave exploration"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Chitwan Safari Adventure",
+      "price": 75,
+      "duration": "2 days",
+      "destination": "Chitwan",
+      "destinationId": 4,
+      "rating": 4.6,
+      "reviews": 198,
+      "guideId": 4,
+      "image": "/chitwan.jpg",
+      "type": "Wildlife",
+      "budgetRange": "$50-$100",
+      "daysRange": "2-3 days",
+      "inclusions": [
+        "Jungle safari",
+        "Canoe ride",
+        "Elephant breeding center visit",
+        "Tharu cultural program",
+        "Full board accommodation"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival and Village Walk",
+          "description": "Welcome to Chitwan, village walk, and cultural program"
+        },
+        {
+          "day": 2,
+          "title": "Jungle Safari",
+          "description": "Full day jungle safari and canoe ride"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Annapurna Base Camp Trek",
+      "price": 150,
+      "duration": "10 days",
+      "destination": "Annapurna",
+      "destinationId": 6,
+      "rating": 4.9,
+      "reviews": 412,
+      "guideId": 3,
+      "image": "/annapurna base camp.jpg",
+      "type": "Adventure & Trekking",
+      "budgetRange": "$150+",
+      "daysRange": "7+ days",
+      "inclusions": [
+        "Experienced trekking guide",
+        "Teahouse accommodation",
+        "All meals during trek",
+        "Permits and fees",
+        "Porter service available"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Drive to Nayapul, Trek to Tikhedhunga",
+          "description": "Start of the beautiful ABC trek"
+        },
+        {
+          "day": 2,
+          "title": "Trek to Ghorepani",
+          "description": "Climb through rhododendron forests"
+        },
+        {
+          "day": 3,
+          "title": "Poon Hill Sunrise",
+          "description": "Early morning hike to Poon Hill viewpoint"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Lumbini Pilgrimage Tour",
+      "price": 45,
+      "duration": "1 day",
+      "destination": "Lumbini",
+      "destinationId": 5,
+      "rating": 4.6,
+      "reviews": 87,
+      "guideId": 6,
+      "image": "/lumbini.jpg",
+      "type": "Cultural Experience",
+      "budgetRange": "$0-$50",
+      "daysRange": "1 day",
+      "inclusions": [
+        "Expert guide on Buddhism",
+        "Bicycle rental",
+        "Entrance fees",
+        "Lunch at monastery",
+        "Transportation"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Sacred Sites Tour",
+          "description": "Visit Maya Devi Temple, Ashoka Pillar, and international monasteries"
+        }
+      ]
+    }
+  ]
+}

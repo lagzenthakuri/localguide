@@ -4,49 +4,25 @@ import { useState } from "react"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import Link from "next/link"
+import destinationsData from "@/data/destination-data.json"
+import { use } from "react"
 
-export default function PackageDetail({ params }: { params: { id: string } }) {
+export default function PackageDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
+  const packageId = Number.parseInt(id) || 1
+
   const [showBargaining, setShowBargaining] = useState(false)
-  const [negotiatedPrice, setNegotiatedPrice] = useState(150)
   const [messages, setMessages] = useState<Array<{ role: string; text: string }>>([])
   const [messageInput, setMessageInput] = useState("")
 
-  const guide = {
-    id: 1,
-    name: "Ram Chand",
-    rating: 4.8,
-    reviews: 245,
-    languages: ["English", "Nepali", "Hindi"],
-    verificationBadge: true,
-  }
+  // Find package from JSON
+  const packageData = destinationsData.packages.find(pkg => pkg.id === packageId) || destinationsData.packages[0]
+  
+  // Find guide from JSON
+  const guide = destinationsData.guides.find(g => g.id === packageData.guideId)
 
-  const package_data = {
-    name: "3 Day Everest Trek",
-    price: 150,
-    duration: "3 days",
-    destination: "Everest",
-    rating: 4.8,
-    reviews: 124,
-    inclusions: [
-      "Professional Mountain Guide",
-      "Accommodation in mountain lodges",
-      "All meals (breakfast, lunch, dinner)",
-      "Trek permits and insurance",
-      "Oxygen backup (if needed)",
-      "Emergency evacuation support",
-    ],
-    itinerary: [
-      { day: 1, title: "Base Camp Arrival", description: "Arrive at Everest Base Camp and acclimatization" },
-      { day: 2, title: "Camp 1 Trek", description: "Trek to Camp 1 with stunning mountain views" },
-      { day: 3, title: "Peak Preparation", description: "Preparation day and peak attempt" },
-    ],
-    places: [
-      { name: "Everest Base Camp", location: "Nepal" },
-      { name: "South Col", location: "Nepal/Tibet border" },
-      { name: "Camp 1", location: "Everest" },
-      { name: "Camp 2", location: "Everest" },
-    ],
-  }
+  // Initialize negotiated price with package price
+  const [negotiatedPrice, setNegotiatedPrice] = useState(packageData.price)
 
   const sendMessage = () => {
     if (messageInput.trim()) {
@@ -59,6 +35,18 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
     }
   }
 
+  if (!guide) {
+    return (
+      <main className="min-h-screen bg-slate-50">
+        <Navigation />
+        <div className="max-w-5xl mx-auto px-4 py-24 text-center">
+          <h1 className="text-2xl font-bold text-slate-900">Package not found</h1>
+        </div>
+        <Footer />
+      </main>
+    )
+  }
+
   return (
     <main className="min-h-screen bg-slate-50">
       <Navigation />
@@ -66,25 +54,26 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-24">
         {/* Package Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-slate-900 mb-4">{package_data.name}</h1>
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">{packageData.name}</h1>
           <div className="flex flex-wrap gap-4 items-center">
             <div className="flex items-center gap-1">
-              <span className="text-lg font-bold text-amber-500">⭐ {package_data.rating}</span>
-              <span className="text-sm text-slate-600">({package_data.reviews} reviews)</span>
+              <span className="text-lg font-bold text-amber-500">⭐ {packageData.rating}</span>
+              <span className="text-sm text-slate-600">({packageData.reviews} reviews)</span>
             </div>
-            <span className="text-lg font-bold text-cyan-600">${package_data.price}/person</span>
+            <span className="text-lg font-bold text-cyan-600">${packageData.price}/person</span>
             <span className="text-slate-600">
-              {package_data.duration} • {package_data.destination}
+              {packageData.duration} • {packageData.destination}
             </span>
           </div>
         </div>
 
         {/* Main Image */}
-        <div className="mb-8 rounded-2xl overflow-hidden shadow-lg h-96 bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
-          <div className="text-center">
-            <div className="text-8xl mb-4">🏔️</div>
-            <p className="text-slate-600">Mountain Trekking Experience</p>
-          </div>
+        <div className="mb-8 rounded-2xl overflow-hidden shadow-lg h-96">
+          <img 
+            src={packageData.image} 
+            alt={packageData.name}
+            className="w-full h-full object-cover"
+          />
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
@@ -94,64 +83,82 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
             <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-6 mb-8">
               <h3 className="font-bold text-slate-900 mb-4">Your Guide</h3>
               <div className="flex items-start gap-4">
-                <div className="w-16 h-16 rounded-full bg-slate-300 flex items-center justify-center text-2xl">👤</div>
+                <img 
+                  src={guide.image} 
+                  alt={guide.name}
+                  className="w-16 h-16 rounded-full object-cover"
+                />
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <h4 className="font-bold text-slate-900">{guide.name}</h4>
-                    {guide.verificationBadge && <span className="text-green-600 font-bold">✓ Verified</span>}
+                    {guide.verified && <span className="text-green-600 font-bold">✓ Verified</span>}
                   </div>
                   <div className="flex items-center gap-1 mb-2">
                     <span className="text-amber-500">⭐ {guide.rating}</span>
                     <span className="text-slate-600">({guide.reviews} reviews)</span>
                   </div>
                   <p className="text-sm text-slate-700">Languages: {guide.languages.join(", ")}</p>
+                  <p className="text-sm text-slate-600 mt-1">{guide.specialization} • {guide.experience}</p>
                 </div>
               </div>
             </div>
 
             {/* Itinerary */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Itinerary</h3>
-              <div className="space-y-4">
-                {package_data.itinerary.map((item) => (
-                  <div key={item.day} className="border-l-4 border-cyan-600 pl-6 py-2">
-                    <h4 className="font-bold text-slate-900 mb-1">
-                      Day {item.day}: {item.title}
-                    </h4>
-                    <p className="text-slate-600">{item.description}</p>
-                  </div>
-                ))}
+            {packageData.itinerary && packageData.itinerary.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">Itinerary</h3>
+                <div className="space-y-4">
+                  {packageData.itinerary.map((item, idx) => (
+                    <div key={idx} className="border-l-4 border-cyan-600 pl-6 py-2">
+                      <h4 className="font-bold text-slate-900 mb-1">
+                        Day {item.day}: {item.title}
+                      </h4>
+                      <p className="text-slate-600">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Inclusions */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">What's Included</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {package_data.inclusions.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-cyan-600 flex items-center justify-center mt-1 flex-shrink-0">
-                      <span className="text-white text-sm">✓</span>
+            {packageData.inclusions && packageData.inclusions.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">What's Included</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {packageData.inclusions.map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-cyan-600 flex items-center justify-center mt-1 flex-shrink-0">
+                        <span className="text-white text-sm">✓</span>
+                      </div>
+                      <span className="text-slate-700">{item}</span>
                     </div>
-                    <span className="text-slate-700">{item}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
-            {/* Places to Visit */}
+            {/* Package Type & Details */}
             <div className="mb-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Places You'll Visit</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {package_data.places.map((place, idx) => (
-                  <div
-                    key={idx}
-                    className="border-2 border-slate-200 rounded-lg p-4 hover:border-cyan-600 hover:bg-cyan-50 transition"
-                  >
-                    <h4 className="font-bold text-slate-900 flex items-center gap-2">📍 {place.name}</h4>
-                    <p className="text-sm text-slate-600 mt-1">{place.location}</p>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Package Details</h3>
+              <div className="bg-white rounded-xl p-6 border-2 border-slate-200">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm text-slate-600 mb-1">Type</p>
+                    <p className="font-semibold text-slate-900">{packageData.type}</p>
                   </div>
-                ))}
+                  <div>
+                    <p className="text-sm text-slate-600 mb-1">Duration</p>
+                    <p className="font-semibold text-slate-900">{packageData.duration}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-600 mb-1">Budget Range</p>
+                    <p className="font-semibold text-slate-900">{packageData.budgetRange}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-600 mb-1">Destination</p>
+                    <p className="font-semibold text-slate-900">{packageData.destination}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -186,15 +193,15 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
                     </label>
                     <input
                       type="range"
-                      min="100"
-                      max="250"
+                      min={Math.floor(packageData.price * 0.7)}
+                      max={Math.floor(packageData.price * 1.5)}
                       value={negotiatedPrice}
                       onChange={(e) => setNegotiatedPrice(Number.parseInt(e.target.value))}
                       className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-600"
                     />
                     <div className="flex justify-between text-xs text-slate-600 mt-1">
-                      <span>$100</span>
-                      <span>$250</span>
+                      <span>${Math.floor(packageData.price * 0.7)}</span>
+                      <span>${Math.floor(packageData.price * 1.5)}</span>
                     </div>
                   </div>
 
@@ -248,7 +255,7 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
               <div className="mt-6 pt-6 border-t border-slate-200 space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-slate-600">Duration</span>
-                  <span className="font-semibold text-slate-900">{package_data.duration}</span>
+                  <span className="font-semibold text-slate-900">{packageData.duration}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-600">Group Size</span>
@@ -258,8 +265,40 @@ export default function PackageDetail({ params }: { params: { id: string } }) {
                   <span className="text-slate-600">Cancellation</span>
                   <span className="font-semibold text-green-600">Free</span>
                 </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-600">Guide Response</span>
+                  <span className="font-semibold text-slate-900">{guide.responseTime}</span>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Similar Packages */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Similar Packages</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {destinationsData.packages
+              .filter(pkg => pkg.id !== packageId && pkg.type === packageData.type)
+              .slice(0, 3)
+              .map(pkg => {
+                const pkgGuide = destinationsData.guides.find(g => g.id === pkg.guideId)
+                return (
+                  <Link key={pkg.id} href={`/packages/${pkg.id}`}>
+                    <div className="bg-white rounded-xl overflow-hidden border-2 border-slate-200 hover:shadow-xl transition cursor-pointer">
+                      <img src={pkg.image} alt={pkg.name} className="w-full h-40 object-cover" />
+                      <div className="p-4">
+                        <h3 className="font-bold text-slate-900 mb-1">{pkg.name}</h3>
+                        <p className="text-sm text-slate-600 mb-2">{pkg.destination}</p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-lg font-bold text-cyan-600">${pkg.price}</span>
+                          <span className="text-sm text-amber-500">⭐ {pkg.rating}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                )
+              })}
           </div>
         </div>
       </div>

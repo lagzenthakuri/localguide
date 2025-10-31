@@ -3,6 +3,9 @@
 import { useState, useMemo, useEffect } from "react"
 import { ChevronLeft, ChevronRight, Check, Sparkles, X } from "lucide-react"
 import Link from "next/link"
+import Navigation from "@/components/navigation"
+import destinationsData from "@/data/destination-data.json"
+
 interface Question {
   id: string
   title: string
@@ -238,40 +241,42 @@ function SurveyPopup({ onComplete, onSkip }: SurveyPopupProps) {
 // Package Card Component
 function PackageCard({ pkg, isRecommended }: PackageCardProps) {
   return (
-    <div className={`bg-white rounded-2xl overflow-hidden border-2 hover:shadow-xl transition-all duration-300 ${
-      isRecommended ? 'border-cyan-500 ring-2 ring-cyan-200' : 'border-slate-200'
-    }`}>
-      {isRecommended && (
-        <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 text-sm font-semibold flex items-center gap-2">
-          <Sparkles className="w-4 h-4" />
-          Recommended for you
-        </div>
-      )}
-      <img src={pkg.image} alt={pkg.name} className="w-full h-48 object-cover" />
-      <div className="p-5">
-        <div className="flex items-start justify-between mb-3">
-          <div>
-            <h3 className="font-bold text-slate-900 text-lg mb-1">{pkg.name}</h3>
-            <p className="text-slate-600 text-sm">{pkg.destination}</p>
+    <Link href={`/package/${pkg.id}`}>
+      <div className={`bg-white rounded-2xl overflow-hidden border-2 hover:shadow-xl transition-all duration-300 cursor-pointer ${
+        isRecommended ? 'border-cyan-500 ring-2 ring-cyan-200' : 'border-slate-200'
+      }`}>
+        {isRecommended && (
+          <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 text-sm font-semibold flex items-center gap-2">
+            <Sparkles className="w-4 h-4" />
+            Recommended for you
           </div>
-          <div className="text-right">
-            <div className="text-2xl font-bold text-slate-900">${pkg.price}</div>
-            <div className="text-slate-600 text-sm">per person</div>
+        )}
+        <img src={pkg.image} alt={pkg.name} className="w-full h-48 object-cover" />
+        <div className="p-5">
+          <div className="flex items-start justify-between mb-3">
+            <div>
+              <h3 className="font-bold text-slate-900 text-lg mb-1">{pkg.name}</h3>
+              <p className="text-slate-600 text-sm">{pkg.destination}</p>
+            </div>
+            <div className="text-right">
+              <div className="text-2xl font-bold text-slate-900">${pkg.price}</div>
+              <div className="text-slate-600 text-sm">per person</div>
+            </div>
           </div>
-        </div>
-        <div className="flex items-center gap-4 text-sm text-slate-600 mb-4">
-          <span>⏱️ {pkg.duration}</span>
-          <span>⭐ {pkg.rating} ({pkg.reviews})</span>
-        </div>
-        <div className="flex items-center gap-3 pt-4 border-t border-slate-200">
-          <img src={pkg.guide.image} alt={pkg.guide.name} className="w-10 h-10 rounded-full object-cover" />
-          <div>
-            <div className="text-sm font-medium text-slate-900">{pkg.guide.name}</div>
-            <div className="text-xs text-slate-600">Your Guide</div>
+          <div className="flex items-center gap-4 text-sm text-slate-600 mb-4">
+            <span>⏱️ {pkg.duration}</span>
+            <span>⭐ {pkg.rating} ({pkg.reviews})</span>
+          </div>
+          <div className="flex items-center gap-3 pt-4 border-t border-slate-200">
+            <img src={pkg.guide.image} alt={pkg.guide.name} className="w-10 h-10 rounded-full object-cover" />
+            <div>
+              <div className="text-sm font-medium text-slate-900">{pkg.guide.name}</div>
+              <div className="text-xs text-slate-600">Your Guide</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
@@ -285,94 +290,30 @@ export default function PackagesPage() {
   const [selectedPriceRanges, setSelectedPriceRanges] = useState<string[]>([])
   const [sortBy, setSortBy] = useState<"featured" | "recommended" | "price-low" | "price-high" | "rating">("featured")
 
-  const MOCK_PACKAGES: Package[] = [
-    {
-      id: 1,
-      name: "Everest Base Camp Trek",
-      price: 85,
-      duration: "14 days",
-      destination: "Sagarmatha",
-      rating: 4.8,
-      reviews: 324,
-      guide: { id: 1, name: "Raj Singh", image: "/api/placeholder/100/100" },
-      image: "/api/placeholder/400/300",
-      type: "Adventure & Trekking",
-      budgetRange: "$50-$100",
-      daysRange: "7+ days",
-    },
-    {
-      id: 2,
-      name: "Kathmandu Heritage Tour",
-      price: 65,
-      duration: "6 hours",
-      destination: "Kathmandu",
-      rating: 4.7,
-      reviews: 156,
-      guide: { id: 2, name: "Priya Sharma", image: "/api/placeholder/100/100" },
-      image: "/api/placeholder/400/300",
-      type: "Cultural Experience",
-      budgetRange: "$50-$100",
-      daysRange: "1 day",
-    },
-    {
-      id: 3,
-      name: "Pokhara Lake Cruise",
-      price: 120,
-      duration: "8 hours",
-      destination: "Pokhara",
-      rating: 4.9,
-      reviews: 289,
-      guide: { id: 3, name: "Ramesh Chand", image: "/api/placeholder/100/100" },
-      image: "/api/placeholder/400/300",
-      type: "Relaxation",
-      budgetRange: "$100-$150",
-      daysRange: "1 day",
-    },
-    {
-      id: 4,
-      name: "Chitwan Safari Adventure",
-      price: 75,
-      duration: "2 days",
-      destination: "Chitwan",
-      rating: 4.6,
-      reviews: 198,
-      guide: { id: 4, name: "Anita Nepal", image: "/api/placeholder/100/100" },
-      image: "/api/placeholder/400/300",
-      type: "Wildlife",
-      budgetRange: "$50-$100",
-      daysRange: "2-3 days",
-    },
-    {
-      id: 5,
-      name: "Nagarkot Sunrise Trek",
-      price: 45,
-      duration: "1 day",
-      destination: "Nagarkot",
-      rating: 4.7,
-      reviews: 412,
-      guide: { id: 5, name: "Vikas Sharma", image: "/api/placeholder/100/100" },
-      image: "/api/placeholder/400/300",
-      type: "Adventure & Trekking",
-      budgetRange: "$0-$50",
-      daysRange: "1 day",
-    },
-    {
-      id: 6,
-      name: "Rara Lake Mountain Experience",
-      price: 150,
-      duration: "3 days",
-      destination: "Rara Lake",
-      rating: 4.9,
-      reviews: 87,
-      guide: { id: 6, name: "Dev Patel", image: "/api/placeholder/100/100" },
-      image: "/api/placeholder/400/300",
-      type: "Adventure & Trekking",
-      budgetRange: "$150+",
-      daysRange: "2-3 days",
-    },
-  ]
+  // Load packages from JSON and merge with guide data
+  const MOCK_PACKAGES: Package[] = useMemo(() => {
+    return destinationsData.packages.map(pkg => {
+      const guide = destinationsData.guides.find(g => g.id === pkg.guideId)
+      return {
+        ...pkg,
+        guide: guide ? {
+          id: guide.id,
+          name: guide.name,
+          image: guide.image
+        } : {
+          id: 0,
+          name: "Unknown Guide",
+          image: "/api/placeholder/100/100"
+        }
+      }
+    })
+  }, [])
 
-  const DESTINATIONS: string[] = ["Sagarmatha", "Kathmandu", "Pokhara", "Chitwan", "Nagarkot", "Rara Lake"]
+  // Get unique destinations from packages
+  const DESTINATIONS: string[] = useMemo(() => {
+    return Array.from(new Set(destinationsData.packages.map(p => p.destination)))
+  }, [])
+
   const PRICE_RANGES = [
     { label: "Under $50", min: 0, max: 50 },
     { label: "$50 - $100", min: 50, max: 100 },
@@ -476,10 +417,11 @@ export default function PackagesPage() {
 
   return (
     <main className="min-h-screen bg-slate-50">
+      <Navigation />
       {showSurvey && <SurveyPopup onComplete={handleSurveyComplete} onSkip={handleSurveySkip} />}
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border-b border-slate-200 py-8">
+      <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border-b border-slate-200 py-8 pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-start justify-between">
             <div>

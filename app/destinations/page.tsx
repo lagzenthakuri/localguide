@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { MapPin, Star } from "lucide-react"
+import destinationsData from "@/data/destination-data.json"
 
 interface DestinationCard {
   id: number
@@ -15,73 +16,21 @@ interface DestinationCard {
   rating: number
   reviews: number
   description: string
-  guides: number
+  guides: Array<{ id: number }>
 }
 
-const DESTINATIONS: DestinationCard[] = [
-  {
-    id: 1,
-    name: "Taj Mahal",
-    image: "/taj-mahal-mausoleum.png",
-    country: "Agra, India",
-    rating: 4.8,
-    reviews: 1240,
-    description: "Iconic white marble mausoleum and UNESCO World Heritage site",
-    guides: 12,
-  },
-  {
-    id: 2,
-    name: "Jaipur City Palace",
-    image: "/jaipur-city-palace.jpg",
-    country: "Jaipur, India",
-    rating: 4.6,
-    reviews: 856,
-    description: "Historic blend of Rajasthani and Mughal architecture",
-    guides: 8,
-  },
-  {
-    id: 3,
-    name: "Kerala Backwaters",
-    image: "/kerala-backwaters.jpg",
-    country: "Kerala, India",
-    rating: 4.9,
-    reviews: 2103,
-    description: "Scenic waterways and tropical landscape paradise",
-    guides: 15,
-  },
-  {
-    id: 4,
-    name: "Goa Beaches",
-    image: "/goa-beach.jpg",
-    country: "Goa, India",
-    rating: 4.7,
-    reviews: 1567,
-    description: "Golden sandy beaches with vibrant beach culture",
-    guides: 10,
-  },
-  {
-    id: 5,
-    name: "Himalayas",
-    image: "/himalayas-trek.jpg",
-    country: "Northern India",
-    rating: 4.9,
-    reviews: 945,
-    description: "Majestic mountain ranges with trekking and adventure",
-    guides: 11,
-  },
-  {
-    id: 6,
-    name: "Mumbai Street Food",
-    image: "/mumbai-street-food.jpg",
-    country: "Mumbai, India",
-    rating: 4.8,
-    reviews: 1123,
-    description: "Vibrant culinary experience and local food culture",
-    guides: 9,
-  },
-]
-
 export default function DestinationsPage() {
+  const DESTINATIONS: DestinationCard[] = destinationsData.destinations.map(dest => ({
+    id: dest.id,
+    name: dest.name,
+    image: dest.image,
+    country: dest.country,
+    rating: dest.rating,
+    reviews: dest.reviews,
+    description: dest.description,
+    guides: dest.guides
+  }))
+
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
@@ -89,7 +38,10 @@ export default function DestinationsPage() {
       {/* Header */}
       <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border-b border-muted-light py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-black text-lg font-bold">Explore popular destinations and book tours with verified local guides</p>
+          <h1 className="text-4xl font-bold text-slate-900 mb-2">Explore Nepal</h1>
+          <p className="text-black text-lg font-medium">
+            Discover Nepal's most beautiful destinations and book tours with verified local guides
+          </p>
         </div>
       </div>
 

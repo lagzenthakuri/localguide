@@ -8,33 +8,49 @@ const destinations = [
     name: "Mt. Everest",
     region: "Nepal",
     guides: 128,
-    image: "/mountain-peak-snow-everest.jpg",
+    image: "/everest.webp",
     tours: 45,
   },
   {
     id: 2,
-    name: "ABC Camp",
+    name: "Kathmandu Valley",
     region: "Nepal",
-    guides: 95,
-    image: "/mountain-camping-trek.jpg",
-    tours: 38,
+    guides: 295,
+    image: "/kathmandu valley.jpg",
+    tours: 138,
   },
   {
     id: 3,
-    name: "Kathmandu",
+    name: "Pokhara Valley",
     region: "Nepal",
     guides: 156,
-    image: "/ancient-city-temples-architecture.jpg",
+    image: "/pokhara valley.webp",
     tours: 72,
   },
   {
     id: 4,
-    name: "Lusolie",
-    region: "Tanzania",
+    name: "Chitwan National Park",
+    region: "Nepal",
     guides: 87,
-    image: "/safari-wildlife-landscape.jpg",
+    image: "/chitwan.jpg",
     tours: 29,
   },
+  {
+    id: 5,
+    name: "Lumbini",
+    region: "Nepal",
+    guides: 64,
+    image: "/lumbini.jpg",
+    tours: 21,
+  },
+  {
+    id: 6,
+    name: "Annapurna Base Camp",
+    region: "Nepal",
+    guides: 203,
+    image: "/annapurna base camp.jpg",
+    tours: 89,
+  }
 ]
 
 export default function TopDestinations() {
@@ -43,7 +59,7 @@ export default function TopDestinations() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Top Destinations</h2>
-          <p className="text-xl text-muted max-w-2xl">
+          <p className="text-xl text-gray-500 max-w-2xl">
             Explore the most popular destinations with verified local guides
           </p>
         </div>
@@ -62,7 +78,7 @@ export default function TopDestinations() {
                   <p className="text-blue-100">{dest.region}</p>
                 </div>
               </div>
-              <div className="flex justify-between text-sm text-muted">
+              <div className="flex justify-between text-sm text-gray-500">
                 <span>{dest.guides} Guides</span>
                 <span>{dest.tours} Tours</span>
               </div>
