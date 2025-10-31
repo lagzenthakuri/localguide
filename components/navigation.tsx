@@ -36,11 +36,11 @@ export default function Navigation() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Link href="/login" className="text-slate-900 hover:text-cyan-600 transition font-medium">
+            <Link href="/authentication" className="text-slate-900 hover:text-cyan-600 transition font-medium">
               Login
             </Link>
             <Link
-              href="/signup"
+              href="/authentication"
               className="px-4 py-2 text-white rounded-lg hover:opacity-90 transition font-medium"
               style={{ backgroundColor: "#0891b2" }}
             >

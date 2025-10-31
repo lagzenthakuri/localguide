@@ -89,8 +89,7 @@ export default function DestinationsPage() {
       {/* Header */}
       <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border-b border-muted-light py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-foreground mb-3">Top Destinations</h1>
-          <p className="text-muted text-lg">Explore popular destinations and book tours with verified local guides</p>
+          <p className="text-black text-lg font-bold">Explore popular destinations and book tours with verified local guides</p>
         </div>
       </div>
 
@@ -110,15 +109,15 @@ export default function DestinationsPage() {
                   <h3 className="text-lg font-bold text-foreground mb-1">{destination.name}</h3>
                   <div className="flex items-center gap-1 text-muted mb-3">
                     <MapPin size={16} />
-                    <span className="text-sm">{destination.country}</span>
+                    <span className="text-sm text-black">{destination.country}</span>
                   </div>
 
-                  <p className="text-sm text-muted mb-4 line-clamp-2">{destination.description}</p>
+                  <p className="text-sm text-black mb-4 line-clamp-2">{destination.description}</p>
 
                   <div className="flex items-center justify-between pt-4 border-t border-muted-light">
                     <div className="flex items-center gap-2">
-                      <Star size={16} className="text-accent fill-accent" />
-                      <span className="font-semibold text-foreground">{destination.rating}</span>
+                      <Star size={16} className="text-accent text-2xl fill-yellow-500" />
+                      <span className="font-semibold text-yellow-700 text-foreground">{destination.rating}</span>
                       <span className="text-xs text-muted">({destination.reviews})</span>
                     </div>
                     <Button size="sm" className="bg-primary hover:bg-primary-dark text-white">
