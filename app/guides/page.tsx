@@ -115,9 +115,91 @@ export default function GuidesPage() {
       <Navigation/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-8">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">Meet Our Expert Guides</h1>
           <p className="text-lg text-slate-600">Choose from verified local guides with years of experience</p>
+        </div>
+
+        {/* Team Guide Collaboration Banner */}
+        <div className="mb-12 bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 rounded-2xl overflow-hidden shadow-2xl">
+          <div className="grid md:grid-cols-2 gap-0">
+            {/* Left Side - Content */}
+            <div className="p-8 md:p-10 text-white">
+              <div className="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                ⭐ Premium Service
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Need Extra Support & Safety?
+              </h2>
+              <p className="text-lg text-cyan-50 mb-6 leading-relaxed">
+                Book our expert guide teams! Get dual guides for enhanced safety, combined expertise, and personalized attention throughout your journey.
+              </p>
+              
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    🛡️
+                  </div>
+                  <span className="text-cyan-50">Enhanced safety with 24/7 dual support</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    🎯
+                  </div>
+                  <span className="text-cyan-50">Combined decades of expertise</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    👥
+                  </div>
+                  <span className="text-cyan-50">Better group management & attention</span>
+                </div>
+              </div>
+
+              <Link href="/guide-collaboration">
+                <button className="px-8 py-4 bg-white text-cyan-600 rounded-xl font-bold text-lg hover:bg-cyan-50 transition-all shadow-lg hover:shadow-xl hover:scale-105 transform inline-flex items-center gap-2">
+                  View Team Packages
+                  <span className="text-xl">→</span>
+                </button>
+              </Link>
+            </div>
+
+            {/* Right Side - Visual */}
+            <div className="relative bg-gradient-to-br from-cyan-500/20 to-purple-500/20 p-8 md:p-10 flex items-center justify-center">
+              <div className="relative">
+                {/* Guide Icons */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-3xl shadow-lg">
+                    👨
+                  </div>
+                  <div className="text-4xl text-white">🤝</div>
+                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-3xl shadow-lg">
+                    👩
+                  </div>
+                </div>
+
+                {/* Stats Cards */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white/90 backdrop-blur rounded-xl p-4 text-center shadow-lg">
+                    <p className="text-2xl font-bold text-slate-900">98%</p>
+                    <p className="text-xs text-slate-600">Success Rate</p>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur rounded-xl p-4 text-center shadow-lg">
+                    <p className="text-2xl font-bold text-slate-900">5/5</p>
+                    <p className="text-xs text-slate-600">Safety Rating</p>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur rounded-xl p-4 text-center shadow-lg">
+                    <p className="text-2xl font-bold text-slate-900">3+</p>
+                    <p className="text-xs text-slate-600">Team Packages</p>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur rounded-xl p-4 text-center shadow-lg">
+                    <p className="text-2xl font-bold text-slate-900">30+</p>
+                    <p className="text-xs text-slate-600">Years Combined</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-4 gap-8">
@@ -184,6 +266,20 @@ export default function GuidesPage() {
                 >
                   Reset Filters
                 </button>
+              </div>
+
+              {/* Quick Link to Collaborations */}
+              <div className="mt-6 pt-6 border-t border-slate-200">
+                <Link href="/guide-collaboration">
+                  <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border-2 border-cyan-200 rounded-xl p-4 cursor-pointer hover:border-cyan-400 transition-all">
+                    <div className="text-2xl mb-2">🤝</div>
+                    <p className="font-bold text-slate-900 text-sm mb-1">Team Guides</p>
+                    <p className="text-xs text-slate-600 mb-3">Dual guide packages for extra support</p>
+                    <div className="text-cyan-600 font-semibold text-xs">
+                      Explore Teams →
+                    </div>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
