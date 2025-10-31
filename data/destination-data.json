@@ -19,7 +19,7 @@
         "Sagarmatha National Park (UNESCO)",
         "Tengboche Monastery"
       ],
-      "gallery": ["/himalayas-trek.jpg", "/himalayas-trek.jpg", "/himalayas-trek.jpg"],
+      "gallery": ["/everest1.jpg", "/everest2.jpg", "/everest3.jpg"],
       "guides": [
         {
           "id": 1,
@@ -88,7 +88,7 @@
         "Kathmandu Durbar Square",
         "Living Goddess Kumari"
       ],
-      "gallery": ["/kathmandu-durbar.jpg", "/kathmandu-durbar.jpg", "/kathmandu-durbar.jpg"],
+      "gallery": ["/kathmandu1.jpg", "/kathmandu2.jpg", "/kathmandu3.jpg"],
       "guides": [
         {
           "id": 2,
@@ -149,7 +149,7 @@
         "Sarangkot sunrise viewpoint",
         "Davis Falls and Gupteshwor Cave"
       ],
-      "gallery": ["/pokhara-lake.jpg", "/pokhara-lake.jpg", "/pokhara-lake.jpg"],
+      "gallery": ["/pokhara1.jpg", "/pokhara2.jpg", "/pokhara3.jpg"],
       "guides": [
         {
           "id": 3,
@@ -210,7 +210,7 @@
         "Bird watching (500+ species)",
         "Tharu cultural programs"
       ],
-      "gallery": ["/chitwan-safari.jpg", "/chitwan-safari.jpg", "/chitwan-safari.jpg"],
+      "gallery": ["/chitwan1.jpg", "/chitwan2.jpg", "/chitwan3.jpg"],
       "guides": [
         {
           "id": 4,
@@ -271,7 +271,7 @@
         "International monasteries",
         "Lumbini Museum"
       ],
-      "gallery": ["/lumbini-temple.jpg", "/lumbini-temple.jpg", "/lumbini-temple.jpg"],
+      "gallery": ["/lumbini1.jpg", "/lumbini2.jpg", "/lumbini3.jpg"],
       "guides": [
         {
           "id": 6,
@@ -332,7 +332,7 @@
         "Rhododendron forests",
         "Sunrise at Annapurna Base Camp"
       ],
-      "gallery": ["/annapurna-trek.jpg", "/annapurna-trek.jpg", "/annapurna-trek.jpg"],
+      "gallery": ["/annapurna1.jpg", "/annapurna2.jpeg", "/annapurna3.jpg"],
       "guides": [
         {
           "id": 3,
