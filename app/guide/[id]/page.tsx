@@ -134,7 +134,7 @@ export default function GuidePage({ params }: PageProps) {
             <CardContent className="pt-6">
               <div className="text-center">
                 <div className="text-2xl font-bold text-cyan-600 mb-1">${guide.hourlyRate}</div>
-                <div className="text-sm text-slate-600">per hour</div>
+                <div className="text-sm text-slate-600">per day</div>
               </div>
             </CardContent>
           </Card>
@@ -333,7 +333,7 @@ export default function GuidePage({ params }: PageProps) {
           ) : (
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-slate-900 mb-2">Your Offered Price (per hour)</label>
+                <label className="block text-sm font-semibold text-slate-900 mb-2">Your Offered Price (per day)</label>
                 <div className="flex gap-4">
                   <input
                     type="number"
