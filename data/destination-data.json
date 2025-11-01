@@ -25,7 +25,7 @@
           "id": 1,
           "name": "Raj Singh",
           "image": "/male-guide.jpg",
-          "rating": 4.9,
+          "rating": 4.9,  
           "packageCount": 12,
           "priceFrom": 85
         },
@@ -572,285 +572,215 @@
     }
   ],
   "packages": [
-    {
-      "id": 1,
-      "name": "Everest Base Camp Trek",
-      "price": 85,
-      "duration": "14 days",
-      "destination": "Sagarmatha",
-      "destinationId": 1,
-      "rating": 4.8,
-      "reviews": 324,
-      "guideId": 1,
-      "image": "/everest.webp",
-      "type": "Adventure & Trekking",
-      "budgetRange": "$50-$100",
-      "daysRange": "7+ days",
-      "inclusions": [
-        "Professional Mountain Guide",
-        "Accommodation in mountain lodges",
-        "All meals (breakfast, lunch, dinner)",
-        "Trek permits and insurance",
-        "Oxygen backup (if needed)",
-        "Emergency evacuation support"
-      ],
-      "itinerary": [
-        {
-          "day": 1,
-          "title": "Fly to Lukla, Trek to Phakding",
-          "description": "Early morning flight to Lukla and trek to Phakding (2,610m)"
-        },
-        {
-          "day": 2,
-          "title": "Trek to Namche Bazaar",
-          "description": "Trek through beautiful forests to Namche Bazaar (3,440m)"
-        },
-        {
-          "day": 3,
-          "title": "Acclimatization Day",
-          "description": "Rest day in Namche for altitude acclimatization"
-        },
-        {
-          "day": 4,
-          "title": "Trek to Tengboche",
-          "description": "Visit famous Tengboche Monastery (3,860m)"
-        },
-        {
-          "day": 5,
-          "title": "Trek to Base Camp",
-          "description": "Finally reach Everest Base Camp (5,364m)"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Kathmandu Heritage Tour",
-      "price": 65,
-      "duration": "6 hours",
-      "destination": "Kathmandu",
-      "destinationId": 2,
-      "rating": 4.7,
-      "reviews": 156,
-      "guideId": 2,
-      "image": "/kathmandu valley.jpg",
-      "type": "Cultural Experience",
-      "budgetRange": "$50-$100",
-      "daysRange": "1 day",
-      "inclusions": [
-        "Expert cultural guide",
-        "Transportation",
-        "Entrance fees to all sites",
-        "Traditional lunch",
-        "Hotel pickup and drop"
-      ],
-      "itinerary": [
-        {
-          "day": 1,
-          "title": "UNESCO Heritage Sites Tour",
-          "description": "Visit Pashupatinath, Boudhanath, Swayambhunath, and Durbar Square"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Pokhara Lake Cruise & Adventure",
-      "price": 120,
-      "duration": "8 hours",
-      "destination": "Pokhara",
-      "destinationId": 3,
-      "rating": 4.9,
-      "reviews": 289,
-      "guideId": 3,
-      "image": "/pokhara valley.webp",
-      "type": "Relaxation",
-      "budgetRange": "$100-$150",
-      "daysRange": "1 day",
-      "inclusions": [
-        "Boat cruise on Phewa Lake",
-        "Paragliding experience",
-        "Lunch with lake view",
-        "Cave exploration",
-        "Transportation"
-      ],
-      "itinerary": [
-        {
-          "day": 1,
-          "title": "Lake and Adventure Day",
-          "description": "Boat cruise, paragliding, Davis Falls, and cave exploration"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Chitwan Safari Adventure",
-      "price": 75,
-      "duration": "2 days",
-      "destination": "Chitwan",
-      "destinationId": 4,
-      "rating": 4.6,
-      "reviews": 198,
-      "guideId": 4,
-      "image": "/chitwan.jpg",
-      "type": "Wildlife",
-      "budgetRange": "$50-$100",
-      "daysRange": "2-3 days",
-      "inclusions": [
-        "Jungle safari",
-        "Canoe ride",
-        "Elephant breeding center visit",
-        "Tharu cultural program",
-        "Full board accommodation"
-      ],
-      "itinerary": [
-        {
-          "day": 1,
-          "title": "Arrival and Village Walk",
-          "description": "Welcome to Chitwan, village walk, and cultural program"
-        },
-        {
-          "day": 2,
-          "title": "Jungle Safari",
-          "description": "Full day jungle safari and canoe ride"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Annapurna Base Camp Trek",
-      "price": 150,
-      "duration": "10 days",
-      "destination": "Annapurna",
-      "destinationId": 6,
-      "rating": 4.9,
-      "reviews": 412,
-      "guideId": 3,
-      "image": "/annapurna base camp.jpg",
-      "type": "Adventure & Trekking",
-      "budgetRange": "$150+",
-      "daysRange": "7+ days",
-      "inclusions": [
-        "Experienced trekking guide",
-        "Teahouse accommodation",
-        "All meals during trek",
-        "Permits and fees",
-        "Porter service available"
-      ],
-      "itinerary": [
-        {
-          "day": 1,
-          "title": "Drive to Nayapul, Trek to Tikhedhunga",
-          "description": "Start of the beautiful ABC trek"
-        },
-        {
-          "day": 2,
-          "title": "Trek to Ghorepani",
-          "description": "Climb through rhododendron forests"
-        },
-        {
-          "day": 3,
-          "title": "Poon Hill Sunrise",
-          "description": "Early morning hike to Poon Hill viewpoint"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "name": "Lumbini Pilgrimage Tour",
-      "price": 45,
-      "duration": "1 day",
-      "destination": "Lumbini",
-      "destinationId": 5,
-      "rating": 4.6,
-      "reviews": 87,
-      "guideId": 6,
-      "image": "/lumbini.jpg",
-      "type": "Cultural Experience",
-      "budgetRange": "$0-$50",
-      "daysRange": "1 day",
-      "inclusions": [
-        "Expert guide on Buddhism",
-        "Bicycle rental",
-        "Entrance fees",
-        "Lunch at monastery",
-        "Transportation"
-      ],
-      "itinerary": [
-        {
-          "day": 1,
-          "title": "Sacred Sites Tour",
-          "description": "Visit Maya Devi Temple, Ashoka Pillar, and international monasteries"
-        }
-      ]
-    },
-    {
-  "id": 7,
-  "name": "Upper Mustang Trek",
-  "price": 90,
-  "duration": "12 days",
-  "destination": "Upper Mustang",
-  "destinationId": 7,
-  "rating": 4.8,
-  "reviews": 192,
-  "guideId": 8,
-  "image": "/upper-mustang-trek.jpg",
-  "type": "Adventure & Cultural Trek",
-  "budgetRange": "$80-$120 per day",
-  "daysRange": "10-14 days",
-  "inclusions": [
-    "Restricted area permit",
-    "Professional mountain guide",
-    "Lodging and meals during trek",
-    "Transportation from Pokhara to Jomsom",
-    "Cultural visit to Lo Manthang"
-  ],
-  "itinerary": [
-    {
-      "day": 1,
-      "title": "Drive from Pokhara to Jomsom",
-      "description": "Start your journey with a scenic drive or flight to Jomsom, gateway to Mustang."
-    },
-    {
-      "day": 2,
-      "title": "Jomsom to Kagbeni",
-      "description": "Trek along the Kali Gandaki River to Kagbeni, the entrance to Upper Mustang."
-    },
-    {
-      "day": 3,
-      "title": "Trek to Chele",
-      "description": "Pass through beautiful desert-like landscapes and ancient settlements."
-    },
-    {
-      "day": 4,
-      "title": "Chele to Syangboche",
-      "description": "Continue through narrow canyons and enjoy views of Nilgiri and Annapurna."
-    },
-    {
-      "day": 5,
-      "title": "Syangboche to Ghami",
-      "description": "Explore ancient monasteries and Mani walls as you head deeper into Mustang."
-    },
-    {
-      "day": 6,
-      "title": "Ghami to Lo Manthang",
-      "description": "Reach the walled city of Lo Manthang, the cultural and spiritual center of Mustang."
-    },
-    {
-      "day": 7,
-      "title": "Explore Lo Manthang",
-      "description": "Visit royal palaces, ancient monasteries, and the unique caves of Chhoser."
-    },
-    {
-      "day": 8,
-      "title": "Return Trek",
-      "description": "Retrace your steps back toward Jomsom, enjoying the diverse scenery."
-    },
-    {
-      "day": 12,
-      "title": "Return to Pokhara",
-      "description": "Drive or fly back to Pokhara and conclude the journey."
-    }
-  ]
-}
-
-  ]
+  {
+    "id": 1,
+    "name": "Everest Base Camp Trek",
+    "price": 1450,
+    "duration": "14 days",
+    "destination": "Sagarmatha",
+    "destinationId": 1,
+    "rating": 4.8,
+    "reviews": 324,
+    "guideId": 1,
+    "image": "/everest.webp",
+    "type": "Adventure & Trekking",
+    "budgetRange": "$1,000-$1,500",
+    "daysRange": "12-16 days",
+    "inclusions": [
+      "Professional Mountain Guide",
+      "Accommodation in mountain lodges",
+      "All meals (breakfast, lunch, dinner)",
+      "Trek permits and insurance",
+      "Oxygen backup (if needed)",
+      "Emergency evacuation support"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Fly to Lukla, Trek to Phakding",
+        "description": "Early morning flight to Lukla and trek to Phakding (2,610m)"
+      },
+      {
+        "day": 2,
+        "title": "Trek to Namche Bazaar",
+        "description": "Trek through beautiful forests to Namche Bazaar (3,440m)"
+      },
+      {
+        "day": 3,
+        "title": "Acclimatization Day",
+        "description": "Rest day in Namche for altitude acclimatization"
+      },
+      {
+        "day": 4,
+        "title": "Trek to Tengboche",
+        "description": "Visit famous Tengboche Monastery (3,860m)"
+      },
+      {
+        "day": 5,
+        "title": "Trek to Base Camp",
+        "description": "Finally reach Everest Base Camp (5,364m)"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Kathmandu Heritage Tour",
+    "price": 90,
+    "duration": "6 hours",
+    "destination": "Kathmandu",
+    "destinationId": 2,
+    "rating": 4.7,
+    "reviews": 156,
+    "guideId": 2,
+    "image": "/kathmandu valley.jpg",
+    "type": "Cultural Experience",
+    "budgetRange": "$80-$120",
+    "daysRange": "Half-day",
+    "inclusions": [
+      "Expert cultural guide",
+      "Transportation",
+      "Entrance fees to all sites",
+      "Traditional lunch",
+      "Hotel pickup and drop"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "UNESCO Heritage Sites Tour",
+        "description": "Visit Pashupatinath, Boudhanath, Swayambhunath, and Durbar Square"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Pokhara Lake Cruise & Adventure",
+    "price": 120,
+    "duration": "8 hours",
+    "destination": "Pokhara",
+    "destinationId": 3,
+    "rating": 4.9,
+    "reviews": 289,
+    "guideId": 3,
+    "image": "/pokhara valley.webp",
+    "type": "Relaxation",
+    "budgetRange": "$100-$150",
+    "daysRange": "1 day",
+    "inclusions": [
+      "Boat cruise on Phewa Lake",
+      "Paragliding experience",
+      "Lunch with lake view",
+      "Cave exploration",
+      "Transportation"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Lake and Adventure Day",
+        "description": "Boat cruise, paragliding, Davis Falls, and cave exploration"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Chitwan Safari Adventure",
+    "price": 150,
+    "duration": "2 days",
+    "destination": "Chitwan",
+    "destinationId": 4,
+    "rating": 4.6,
+    "reviews": 198,
+    "guideId": 4,
+    "image": "/chitwan.jpg",
+    "type": "Wildlife",
+    "budgetRange": "$100-$200",
+    "daysRange": "2-3 days",
+    "inclusions": [
+      "Jungle safari",
+      "Canoe ride",
+      "Elephant breeding center visit",
+      "Tharu cultural program",
+      "Full board accommodation"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival and Village Walk",
+        "description": "Welcome to Chitwan, village walk, and cultural program"
+      },
+      {
+        "day": 2,
+        "title": "Jungle Safari",
+        "description": "Full day jungle safari and canoe ride"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Annapurna Base Camp Trek",
+    "price": 1000,
+    "duration": "10 days",
+    "destination": "Annapurna",
+    "destinationId": 6,
+    "rating": 4.9,
+    "reviews": 412,
+    "guideId": 3,
+    "image": "/annapurna base camp.jpg",
+    "type": "Adventure & Trekking",
+    "budgetRange": "$900-$1,200",
+    "daysRange": "7-12 days",
+    "inclusions": [
+      "Experienced trekking guide",
+      "Teahouse accommodation",
+      "All meals during trek",
+      "Permits and fees",
+      "Porter service available"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Drive to Nayapul, Trek to Tikhedhunga",
+        "description": "Start of the beautiful ABC trek"
+      },
+      {
+        "day": 2,
+        "title": "Trek to Ghorepani",
+        "description": "Climb through rhododendron forests"
+      },
+      {
+        "day": 3,
+        "title": "Poon Hill Sunrise",
+        "description": "Early morning hike to Poon Hill viewpoint"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Lumbini Pilgrimage Tour",
+    "price": 60,
+    "duration": "1 day",
+    "destination": "Lumbini",
+    "destinationId": 5,
+    "rating": 4.6,
+    "reviews": 87,
+    "guideId": 6,
+    "image": "/lumbini.jpg",
+    "type": "Cultural Experience",
+    "budgetRange": "$50-$80",
+    "daysRange": "1 day",
+    "inclusions": [
+      "Expert guide on Buddhism",
+      "Bicycle rental",
+      "Entrance fees",
+      "Lunch at monastery",
+      "Transportation"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+      "title": "Sacred Sites Tour",
+      "description": "Visit Maya Devi Temple, Ashoka Pillar, and international monasteries"
+      }
+    ]
+  }
+]
 }
