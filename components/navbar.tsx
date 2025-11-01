@@ -129,7 +129,7 @@ export default function GuideNavigation() {
                 </div>
 
                 <button
-                  onClick={() => signOut({ callbackUrl: "/auth" })}
+                  onClick={() => signOut({ callbackUrl: "/authentication" })}
                   className="hidden md:block px-4 py-2 text-sm font-medium text-slate-700 hover:text-red-600 transition"
                 >
                   Logout
@@ -138,13 +138,13 @@ export default function GuideNavigation() {
             ) : (
               <div className="flex items-center gap-3">
                 <Link
-                  href="/auth"
+                  href="authentication"
                   className="text-slate-900 hover:text-cyan-600 transition font-medium"
                 >
                   Login
                 </Link>
                 <Link
-                  href="/auth"
+                  href="/authentication"
                   className="px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition font-medium"
                 >
                   Sign Up
@@ -219,7 +219,7 @@ export default function GuideNavigation() {
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false)
-                    signOut({ callbackUrl: "/auth" })
+                    signOut({ callbackUrl: "/authentication" })
                   }}
                   className="text-left text-red-600 hover:text-red-700 transition font-medium py-2 border-t border-slate-200 mt-2 pt-4"
                 >

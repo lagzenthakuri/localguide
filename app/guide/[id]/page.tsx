@@ -7,116 +7,69 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-
-const MOCK_GUIDES: Record<number, any> = {
-  1: {
-    id: 1,
-    name: "Raj Singh",
-    bio: "Passionate mountain guide with 12 years of experience guiding on Sagarmatha (Mt. Everest). Specializes in high altitude expeditions and cultural immersion.",
-    image: "/male-guide.jpg",
-    experience: "12 years",
-    location: "Sagarmatha (Mt. Everest), Nepal",
-    rating: 4.9,
-    reviews: 324,
-    languages: ["English", "Nepali", "Hindi"],
-    hourlyRate: 50,
-    responseTime: "Within 1 hour",
-    verification: { verified: true, since: "2020" },
-    specializations: ["High Altitude Trekking", "Mountain Expeditions", "Photography"],
-    about: `I am Raj Singh, a dedicated mountain guide on Sagarmatha with over a decade of experience. 
-    My passion for the Himalayas and culture drives me to provide authentic experiences.
-    Whether you're interested in Everest Base Camp, Sagarmatha National Park, or hidden mountain gems, I can create 
-    personalized itineraries that match your interests and pace.`,
-    certifications: ["Licensed Mountain Guide", "First Aid Certified", "Avalanche Safety Trained"],
-    availability: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    packages: [
-      { name: "Everest Base Camp Trek", price: 85, duration: "14 days", reviews: 324 },
-      { name: "Sagarmatha Sunset Experience", price: 65, duration: "3 days", reviews: 156 },
-      { name: "Complete Everest Region Tour", price: 145, duration: "21 days", reviews: 89 },
-    ],
-    collaborators: [
-      { id: 2, name: "Priya Sharma", location: "Kathmandu", rating: 4.8, image: "/female-guide.jpg" },
-      { id: 3, name: "Ramesh Chand", location: "Pokhara", rating: 4.9, image: "/male-guide.jpg" },
-    ],
-    reviews: [
-      {
-        id: 1,
-        author: "Sarah Johnson",
-        rating: 5,
-        date: "2 weeks ago",
-        text: "Raj was incredibly knowledgeable about Everest Base Camp. His stories brought the mountains to life!",
-      },
-      {
-        id: 2,
-        author: "Michael Chen",
-        rating: 5,
-        date: "1 month ago",
-        text: "Best guide in Sagarmatha! Very professional, punctual, and passionate about his work.",
-      },
-      {
-        id: 3,
-        author: "Emma Wilson",
-        rating: 4,
-        date: "2 months ago",
-        text: "Great experience overall. Would have appreciated more free time to explore on our own.",
-      },
-    ],
-  },
-  2: {
-    id: 2,
-    name: "Priya Sharma",
-    bio: "Cultural enthusiast and expert in Kathmandu's heritage. Makes every tour interactive and fun.",
-    image: "/female-guide.jpg",
-    experience: "8 years",
-    location: "Kathmandu, Nepal",
-    rating: 4.8,
-    reviews: 156,
-    languages: ["English", "Nepali", "German"],
-    hourlyRate: 45,
-    responseTime: "Within 2 hours",
-    verification: { verified: true, since: "2019" },
-    specializations: ["Heritage Sites", "Local Culture", "Temple Tours"],
-    about: `I'm Priya Sharma, a passionate guide dedicated to showcasing the beauty and culture of Kathmandu.
-    With 8 years of experience, I specialize in creating memorable experiences blending education with adventure.
-    My tours explore the Swayambhunath Stupa, Pashupatinath Temple, and vibrant local markets.`,
-    certifications: ["Licensed Tour Guide", "Cultural Heritage Expert"],
-    availability: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    packages: [
-      { name: "Kathmandu Heritage Tour", price: 65, duration: "6 hours", reviews: 156 },
-      { name: "Bhaktapur Old City Explorer", price: 75, duration: "7 hours", reviews: 98 },
-    ],
-    collaborators: [{ id: 1, name: "Raj Singh", location: "Sagarmatha", rating: 4.9, image: "/male-guide.jpg" }],
-    reviews: [
-      {
-        id: 1,
-        author: "James Anderson",
-        rating: 5,
-        date: "3 weeks ago",
-        text: "Priya's energy is contagious! She made us feel welcome and showed us the real Kathmandu.",
-      },
-      {
-        id: 2,
-        author: "Lisa Park",
-        rating: 4,
-        date: "1 month ago",
-        text: "Very knowledgeable and friendly. The temple tours were well-paced.",
-      },
-    ],
-  },
-}
+import destinationData from "@/data/destination-data.json"
 
 interface PageProps {
   params: Promise<{ id: string }>
 }
 
 export default function GuidePage({ params }: PageProps) {
-  // Using sample data for now
+  // Get guide ID from params (default to 1 for demo)
   const guideId = 1
-  const guide = MOCK_GUIDES[guideId] || MOCK_GUIDES[1]
+  
+  // Find guide from JSON data
+  const guide = destinationData.guides.find(g => g.id === guideId) || destinationData.guides[0]
+  
+  // Find packages for this guide
+  const guidePackages = destinationData.packages.filter(pkg => pkg.guideId === guideId)
+  
+  // Find other guides as collaborators (excluding current guide)
+  const collaborators = destinationData.guides
+    .filter(g => g.id !== guideId)
+    .slice(0, 3)
+    .map(g => ({
+      id: g.id,
+      name: g.name,
+      location: g.location,
+      rating: g.rating,
+      image: g.image
+    }))
+  
   const [isFavorite, setIsFavorite] = useState(false)
   const [selectedTab, setSelectedTab] = useState("about")
   const [showBargainingForm, setShowBargainingForm] = useState(false)
   const [bargainPrice, setBargainPrice] = useState(guide.hourlyRate)
+  
+  // Mock additional data not in JSON (can be added to JSON later)
+  const guideExtras = {
+    bio: `Passionate ${guide.specialization.toLowerCase()} guide with ${guide.experience} of experience. Specializes in creating unforgettable experiences in ${guide.location}.`,
+    about: `I am ${guide.name}, a dedicated guide with ${guide.experience} of experience. My passion for Nepal's culture and landscapes drives me to provide authentic experiences. Whether you're interested in ${guide.specialization.toLowerCase()}, I can create personalized itineraries that match your interests and pace.`,
+    certifications: ["Licensed Tour Guide", "First Aid Certified", "Tourism Board Registered"],
+    availability: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    reviews: [
+      {
+        id: 1,
+        author: "Sarah Johnson",
+        rating: 5,
+        date: "2 weeks ago",
+        text: `${guide.name} was incredibly knowledgeable. The experience was amazing!`,
+      },
+      {
+        id: 2,
+        author: "Michael Chen",
+        rating: 5,
+        date: "1 month ago",
+        text: "Best guide ever! Very professional, punctual, and passionate about their work.",
+      },
+      {
+        id: 3,
+        author: "Emma Wilson",
+        rating: 4,
+        date: "2 months ago",
+        text: "Great experience overall. Would definitely recommend!",
+      },
+    ],
+  }
 
   return (
     <main className="min-h-screen bg-slate-50">
@@ -168,7 +121,9 @@ export default function GuidePage({ params }: PageProps) {
                 <span className="font-bold text-lg text-slate-900">{guide.rating}</span>
                 <span className="text-slate-600">({guide.reviews} reviews)</span>
               </div>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-lg text-sm font-semibold">Verified ✓</span>
+              {guide.verified && (
+                <span className="px-3 py-1 bg-green-100 text-green-800 rounded-lg text-sm font-semibold">Verified ✓</span>
+              )}
             </div>
           </div>
         </div>
@@ -194,7 +149,7 @@ export default function GuidePage({ params }: PageProps) {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <div className="text-lg font-bold text-slate-900 mb-1">1h</div>
+                <div className="text-lg font-bold text-slate-900 mb-1">{guide.responseTime}</div>
                 <div className="text-sm text-slate-600">response time</div>
               </div>
             </CardContent>
@@ -225,12 +180,12 @@ export default function GuidePage({ params }: PageProps) {
                 <CardTitle>About Me</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-slate-700 leading-relaxed">{guide.about}</p>
+                <p className="text-slate-700 leading-relaxed">{guideExtras.about}</p>
 
                 <div>
                   <h4 className="font-semibold text-slate-900 mb-3">Specializations</h4>
                   <div className="flex flex-wrap gap-2">
-                    {guide.specializations.map((spec: string) => (
+                    {guide.specialization.split(', ').map((spec: string) => (
                       <span key={spec} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-lg text-sm font-medium">
                         {spec}
                       </span>
@@ -252,7 +207,7 @@ export default function GuidePage({ params }: PageProps) {
                 <div>
                   <h4 className="font-semibold text-slate-900 mb-3">Certifications</h4>
                   <ul className="space-y-2">
-                    {guide.certifications.map((cert: string) => (
+                    {guideExtras.certifications.map((cert: string) => (
                       <li key={cert} className="flex items-center gap-2 text-slate-700">
                         <span>✓</span>
                         {cert}
@@ -266,23 +221,32 @@ export default function GuidePage({ params }: PageProps) {
 
           {/* Packages Tab */}
           <TabsContent value="packages" className="space-y-4">
-            {guide.packages.map((pkg: any, idx: number) => (
-              <Card key={idx}>
+            {guidePackages.length > 0 ? (
+              guidePackages.map((pkg: any) => (
+                <Card key={pkg.id}>
+                  <CardContent className="pt-6">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-slate-900 mb-1">{pkg.name}</h4>
+                        <p className="text-sm text-slate-600">{pkg.duration}</p>
+                        <p className="text-xs text-slate-500 mt-1">{pkg.reviews} reviews</p>
+                        <p className="text-xs text-blue-600 mt-1">⭐ {pkg.rating}</p>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-cyan-600">${pkg.price}</div>
+                        <Button className="mt-2 bg-cyan-600 hover:bg-cyan-700 text-white">Book Now</Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              <Card>
                 <CardContent className="pt-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-slate-900 mb-1">{pkg.name}</h4>
-                      <p className="text-sm text-slate-600">{pkg.duration}</p>
-                      <p className="text-xs text-slate-500 mt-1">{pkg.reviews} reviews</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-cyan-600">${pkg.price}</div>
-                      <Button className="mt-2 bg-cyan-600 hover:bg-cyan-700 text-white">Book Now</Button>
-                    </div>
-                  </div>
+                  <p className="text-slate-600 text-center">No packages available yet</p>
                 </CardContent>
               </Card>
-            ))}
+            )}
           </TabsContent>
 
           <TabsContent value="collaborators" className="space-y-4">
@@ -291,8 +255,8 @@ export default function GuidePage({ params }: PageProps) {
                 <CardTitle>Guides I Work With</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {guide.collaborators && guide.collaborators.length > 0 ? (
-                  guide.collaborators.map((collab: any) => (
+                {collaborators && collaborators.length > 0 ? (
+                  collaborators.map((collab: any) => (
                     <div
                       key={collab.id}
                       className="flex items-center justify-between p-4 border border-slate-200 rounded-lg"
@@ -327,7 +291,7 @@ export default function GuidePage({ params }: PageProps) {
 
           {/* Reviews Tab */}
           <TabsContent value="reviews" className="space-y-4">
-            {guide.reviews.map((review: any) => (
+            {guideExtras.reviews.map((review: any) => (
               <Card key={review.id}>
                 <CardContent className="pt-6">
                   <div className="flex gap-4">
@@ -392,9 +356,9 @@ export default function GuidePage({ params }: PageProps) {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-8">
-          <Button size="lg" className="flex-1 bg-cyan-600 hover:bg-cyan-700 text-white font-bold">
+          <Link href='/chat/1' className="flex-1 bg-cyan-600 hover:bg-cyan-700 text-white font-bold">
             💬 Message Guide
-          </Button>
+          </Link>
           <Button size="lg" variant="outline" className="flex-1 border-2 border-cyan-600 text-cyan-600 bg-transparent">
             📅 Check Availability
           </Button>

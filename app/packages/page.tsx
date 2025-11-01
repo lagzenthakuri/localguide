@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Check, Sparkles, X } from "lucide-react"
 import Link from "next/link"
 import Navigation from "@/components/navigation"
 import destinationsData from "@/data/destination-data.json"
+import Footer from "@/components/footer"
 
 interface Question {
   id: string
@@ -576,6 +577,7 @@ export default function PackagesPage() {
           </div>
         </div>
       </div>
+      <Footer/>
     </main>
   )
 }

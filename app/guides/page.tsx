@@ -2,6 +2,7 @@
 import Navigation from "@/components/navigation"
 import { useState } from "react"
 import Link from "next/link"
+import Footer from "@/components/footer"
 
 export default function GuidesPage() {
   const [guides] = useState([
@@ -121,80 +122,95 @@ export default function GuidesPage() {
         </div>
 
         {/* Team Guide Collaboration Banner */}
-        <div className="mb-12 bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 rounded-2xl overflow-hidden shadow-2xl">
-          <div className="grid md:grid-cols-2 gap-0">
+        <div className="mb-12 bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300">
+          <div className="grid md:grid-cols-5 gap-0">
             {/* Left Side - Content */}
-            <div className="p-8 md:p-10 text-white">
-              <div className="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-bold mb-4">
-                ⭐ Premium Service
+            <div className="md:col-span-3 p-8 md:p-12">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-slate-600 tracking-wide">PREMIUM SERVICE</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Need Extra Support & Safety?
+              
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
+                Team Guide Support
               </h2>
-              <p className="text-lg text-cyan-50 mb-6 leading-relaxed">
-                Book our expert guide teams! Get dual guides for enhanced safety, combined expertise, and personalized attention throughout your journey.
+              
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-xl">
+                Enhanced safety and expertise with dual-guide teams. Perfect for challenging treks and larger groups.
               </p>
               
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                    🛡️
+              <div className="space-y-4 mb-10">
+                <div className="flex items-start gap-3 group">
+                  <div className="mt-1 w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-50 transition-colors duration-200">
+                    <svg className="w-3 h-3 text-slate-600 group-hover:text-emerald-600 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <span className="text-cyan-50">Enhanced safety with 24/7 dual support</span>
+                  <span className="text-slate-700">24/7 dual guide coverage for enhanced safety</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                    🎯
+                <div className="flex items-start gap-3 group">
+                  <div className="mt-1 w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-50 transition-colors duration-200">
+                    <svg className="w-3 h-3 text-slate-600 group-hover:text-emerald-600 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <span className="text-cyan-50">Combined decades of expertise</span>
+                  <span className="text-slate-700">Combined expertise and local knowledge</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                    👥
+                <div className="flex items-start gap-3 group">
+                  <div className="mt-1 w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-50 transition-colors duration-200">
+                    <svg className="w-3 h-3 text-slate-600 group-hover:text-emerald-600 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <span className="text-cyan-50">Better group management & attention</span>
+                  <span className="text-slate-700">Better attention for larger groups</span>
                 </div>
               </div>
 
               <Link href="/guide-collaboration">
-                <button className="px-8 py-4 bg-white text-cyan-600 rounded-xl font-bold text-lg hover:bg-cyan-50 transition-all shadow-lg hover:shadow-xl hover:scale-105 transform inline-flex items-center gap-2">
-                  View Team Packages
-                  <span className="text-xl">→</span>
+                <button className="group inline-flex items-center gap-3 px-6 py-3 bg-slate-900 text-white rounded-xl font-medium hover:bg-slate-800 transition-all duration-200">
+                  <span>Explore Team Packages</span>
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </button>
               </Link>
             </div>
 
             {/* Right Side - Visual */}
-            <div className="relative bg-gradient-to-br from-cyan-500/20 to-purple-500/20 p-8 md:p-10 flex items-center justify-center">
-              <div className="relative">
+            <div className="md:col-span-2 relative bg-gradient-to-br from-slate-50 to-slate-100 p-8 md:p-10 flex items-center justify-center">
+              <div className="relative w-full max-w-sm">
                 {/* Guide Icons */}
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-3xl shadow-lg">
-                    👨
+                <div className="flex items-center justify-center gap-3 mb-8">
+                  <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center border border-slate-200 hover:scale-110 transition-transform duration-300">
+                    <span className="text-2xl">👨</span>
                   </div>
-                  <div className="text-4xl text-white">🤝</div>
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-3xl shadow-lg">
-                    👩
+                  <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center animate-pulse">
+                    <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </div>
+                  <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center border border-slate-200 hover:scale-110 transition-transform duration-300">
+                    <span className="text-2xl">👩</span>
                   </div>
                 </div>
 
                 {/* Stats Cards */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/90 backdrop-blur rounded-xl p-4 text-center shadow-lg">
-                    <p className="text-2xl font-bold text-slate-900">98%</p>
-                    <p className="text-xs text-slate-600">Success Rate</p>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-white rounded-lg p-4 text-center border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all duration-200">
+                    <p className="text-2xl font-bold text-slate-900 mb-1">98%</p>
+                    <p className="text-xs text-slate-600 font-medium">Success Rate</p>
                   </div>
-                  <div className="bg-white/90 backdrop-blur rounded-xl p-4 text-center shadow-lg">
-                    <p className="text-2xl font-bold text-slate-900">5/5</p>
-                    <p className="text-xs text-slate-600">Safety Rating</p>
+                  <div className="bg-white rounded-lg p-4 text-center border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all duration-200">
+                    <p className="text-2xl font-bold text-slate-900 mb-1">5.0</p>
+                    <p className="text-xs text-slate-600 font-medium">Safety Rating</p>
                   </div>
-                  <div className="bg-white/90 backdrop-blur rounded-xl p-4 text-center shadow-lg">
-                    <p className="text-2xl font-bold text-slate-900">3+</p>
-                    <p className="text-xs text-slate-600">Team Packages</p>
+                  <div className="bg-white rounded-lg p-4 text-center border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all duration-200">
+                    <p className="text-2xl font-bold text-slate-900 mb-1">12+</p>
+                    <p className="text-xs text-slate-600 font-medium">Team Options</p>
                   </div>
-                  <div className="bg-white/90 backdrop-blur rounded-xl p-4 text-center shadow-lg">
-                    <p className="text-2xl font-bold text-slate-900">30+</p>
-                    <p className="text-xs text-slate-600">Years Combined</p>
+                  <div className="bg-white rounded-lg p-4 text-center border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all duration-200">
+                    <p className="text-2xl font-bold text-slate-900 mb-1">30+</p>
+                    <p className="text-xs text-slate-600 font-medium">Years Combined</p>
                   </div>
                 </div>
               </div>
@@ -364,6 +380,7 @@ export default function GuidesPage() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }

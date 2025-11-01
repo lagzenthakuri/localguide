@@ -10,7 +10,7 @@ const AuthPage = () => {
 
   useEffect(() => {
     if (sessionStatus === "authenticated") {
-      router.replace("/guide-dashboard");  
+      router.replace("/");  
     }
   }, [sessionStatus, router]);
 

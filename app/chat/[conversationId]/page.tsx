@@ -39,14 +39,15 @@ export default function ChatPage() {
       id: 1,
       sender: "guide",
       type: "text",
-      content: "Hello! I'm Rajesh. I'd love to help you explore Agra. How can I assist you today?",
+      content:
+        "Namaste and warm welcome! This is ABC Trekking. I’m Suresh, your local guide from Pokhara. How may I help you plan your trek today?",
       timestamp: "10:30 AM",
     },
     {
       id: 2,
       sender: "user",
       type: "text",
-      content: "Hi Rajesh! I'm interested in a private Taj Mahal tour. What's your availability next week?",
+      content: "Hi Suresh! I’m interested in doing the Annapurna Base Camp trek. What are the options for next week?",
       timestamp: "10:32 AM",
     },
     {
@@ -54,7 +55,7 @@ export default function ChatPage() {
       sender: "guide",
       type: "text",
       content:
-        "Great! I'm available Monday through Friday next week. The Taj Mahal Sunrise Tour is $85 for 4 hours. When would you prefer?",
+        "Very good choice! The ABC trek is one of the most beautiful routes. We have 5-day and 7-day packages. The standard 5-day trek costs $450 per person, including guide, permit, and accommodation. Would that fit your schedule?",
       timestamp: "10:35 AM",
     },
   ])
@@ -64,9 +65,9 @@ export default function ChatPage() {
       id: 1,
       type: "offer",
       from: "user",
-      originalPrice: 85,
-      proposedPrice: 70,
-      message: "Can you offer a discount for a 4-hour tour?",
+      originalPrice: 450,
+      proposedPrice: 400,
+      message: "Would it be possible to do it for $400? I’m traveling with a friend.",
       status: "pending",
       timestamp: "10:45 AM",
     },
@@ -105,7 +106,8 @@ export default function ChatPage() {
         id: messages.length + 2,
         sender: "guide",
         type: "text",
-        content: "Thanks for your message! Let me think about that.",
+        content:
+          "Alright, dai/sir! Let me check with our manager and see what best price I can offer you, okay?",
         timestamp: new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" }),
       }
       setMessages((prev) => [...prev, response])
@@ -119,9 +121,9 @@ export default function ChatPage() {
       id: bargainingOffers.length + 1,
       type: "counter-offer",
       from: "user",
-      originalPrice: 85,
+      originalPrice: 450,
       proposedPrice: Number.parseInt(offerAmount),
-      message: `I'd like to propose $${offerAmount} for the tour.`,
+      message: `Can you consider $${offerAmount}? I’d really appreciate it.`,
       status: "pending",
       timestamp: new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" }),
     }
@@ -132,12 +134,12 @@ export default function ChatPage() {
       id: messages.length + 1,
       sender: "user",
       type: "counter-offer",
-      content: `I'd like to propose $${offerAmount} for the tour.`,
+      content: `Can you consider $${offerAmount}? I’d really appreciate it.`,
       timestamp: newOffer.timestamp,
       offerDetails: {
-        originalPrice: 85,
+        originalPrice: 450,
         offeredPrice: Number.parseInt(offerAmount),
-        service: "Taj Mahal Sunrise Tour",
+        service: "Annapurna Base Camp Trek (5 days)",
       },
     }
 
@@ -154,7 +156,8 @@ export default function ChatPage() {
       id: messages.length + 1,
       sender: "guide",
       type: "text",
-      content: "Perfect! I accept your offer. Let's move forward with the booking.",
+      content:
+        "Alright, done deal! $400 works for me. You’re getting a very good offer, my friend. We’ll make sure you enjoy every moment of the trek!",
       timestamp: new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" }),
     }
 
@@ -176,9 +179,9 @@ export default function ChatPage() {
           {/* Chat Header */}
           <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border-b-2 border-muted-light p-4 flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <img src="/male-guide.jpg" alt="Rajesh" className="w-10 h-10 rounded-full object-cover" />
+              <img src="/abc-trekking.jpg" alt="ABC Trekking" className="w-10 h-10 rounded-full object-cover" />
               <div>
-                <h2 className="font-bold text-foreground">Rajesh Kumar</h2>
+                <h2 className="font-bold text-foreground">ABC Trekking</h2>
                 <p className="text-xs text-muted">Online</p>
               </div>
             </div>
