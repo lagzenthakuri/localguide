@@ -111,7 +111,7 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/packages"
+                href="/guides"
                 className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-semibold transition text-center shadow-lg"
               >
                 Find a Guide
