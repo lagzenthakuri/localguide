@@ -1,7 +1,7 @@
 import type React from "react"
 
 export const metadata = {
-  title: "Chat with Guide - LocalGuide",
+  title: "Chat with Guide - Meet My Guide",
   description: "Chat and bargain with your local guide",
 }
 

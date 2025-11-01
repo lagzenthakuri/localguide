@@ -321,7 +321,7 @@ export default function GuideDashboard() {
               <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold bg-cyan-600">
                 LG
               </div>
-              <span className="font-bold text-lg text-slate-900">LocalGuide</span>
+              <span className="font-bold text-lg text-slate-900">Meet My Guide</span>
               <span className="text-xs bg-cyan-100 text-cyan-700 px-2 py-1 rounded-full font-semibold">GUIDE</span>
             </div>
 

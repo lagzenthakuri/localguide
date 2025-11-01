@@ -18,12 +18,9 @@ export default function GuideNavigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/guide-dashboard" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold bg-cyan-600">
-              LG
-            </div>
-            <span className="font-bold text-lg hidden sm:inline text-slate-900">LocalGuide</span>
-            <span className="text-xs bg-cyan-100 text-cyan-700 px-2 py-1 rounded-full font-semibold">GUIDE</span>
+          <Link href="/" className="flex items-center gap-2">
+            <img src="/mmg_logo.jpg" className="h-15"/>
+            <img src="/mmg.jpg" className="h-10"/>
           </Link>
 
           {/* Desktop Navigation */}

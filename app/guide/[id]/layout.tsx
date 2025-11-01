@@ -1,7 +1,7 @@
 import type React from "react"
 
 export const metadata = {
-  title: "Guide Profile - LocalGuide",
+  title: "Guide Profile - Meet My Guide",
   description: "View detailed guide profile with packages and reviews",
 }
 

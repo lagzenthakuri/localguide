@@ -1,7 +1,7 @@
 import type React from "react"
 
 export const metadata = {
-  title: "Guide Dashboard - LocalGuide",
+  title: "Guide Dashboard - Meet My Guide",
   description: "Manage your tour bookings and requests",
 }
 

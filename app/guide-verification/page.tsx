@@ -217,7 +217,7 @@ export default function GuideVerification() {
             </svg>
           </div>
           <h1 className="text-3xl font-bold text-slate-900 mb-2">Guide Verification</h1>
-          <p className="text-slate-600">Complete all steps to become a verified guide on LocalGuide</p>
+          <p className="text-slate-600">Complete all steps to become a verified guide on Meet My Guide</p>
         </div>
 
         {/* Progress Steps */}
@@ -567,7 +567,7 @@ export default function GuideVerification() {
               </div>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Application Submitted!</h2>
               <p className="text-lg text-slate-600 mb-8 max-w-md mx-auto">
-                Thank you for applying to become a guide on LocalGuide. Our team will review your application and documents within 2-3 business days.
+                Thank you for applying to become a guide on Meet My Guide. Our team will review your application and documents within 2-3 business days.
               </p>
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 max-w-md mx-auto mb-8">
                 <h3 className="font-semibold text-slate-900 mb-3">What happens next?</h3>
@@ -646,8 +646,8 @@ export default function GuideVerification() {
           <div className="mt-8 text-center">
             <p className="text-slate-600">
               Need help? Contact our support team at{" "}
-              <a href="mailto:support@localguide.com" className="text-cyan-600 hover:text-cyan-700 font-medium">
-                support@localguide.com
+              <a href="mailto:support@MeetMyGuide.com" className="text-cyan-600 hover:text-cyan-700 font-medium">
+                support@meetmyguide.com
               </a>
             </p>
           </div>
