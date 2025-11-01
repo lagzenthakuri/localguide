@@ -50,6 +50,14 @@ const destinations = [
     guides: 203,
     image: "/annapurna base camp.jpg",
     tours: 89,
+  },
+  {
+    id: 7,
+    name: "Upper Mustang",
+    region: "Nepal",
+    guides: 45,
+    image: "/mustang1.jpg",
+    tours: 15,
   }
 ]
 
@@ -60,7 +68,7 @@ export default function TopDestinations() {
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Top Destinations</h2>
           <p className="text-xl text-gray-500 max-w-2xl">
-            Explore the most popular destinations with verified local guides
+            Explore the most popular destinations
           </p>
         </div>
 

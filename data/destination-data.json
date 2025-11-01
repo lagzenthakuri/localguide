@@ -72,65 +72,83 @@
       },
     {
   "id": 2,
-  "name": "Upper Mustang",
-  "country": "Mustang, Nepal",
-  "image": "/mustang1.jpg",
-  "rating": 4.9,
-  "reviews": 1984,
-  "description": "Upper Mustang, often called the 'Last Forbidden Kingdom', is a remote and mystical region of Nepal that offers dramatic desert landscapes, ancient Tibetan culture, and centuries-old monasteries carved into cliffs. A true journey back in time beyond the Himalayas.",
-  "bestTimeToVisit": "May to October",
-  "duration": "5-10 days",
-  "distance": "From Pokhara: 180 km (via Jomsom)",
-  "elevation": "3,800 m",
+  "name": "Kathmandu Valley",
+  "country": "Kathmandu, Nepal",
+  "image": "/kathmandu valley.jpg",
+  "rating": 4.7,
+  "reviews": 3245,
+  "description": "Kathmandu Valley, the cultural heart of Nepal, is home to ancient temples, stupas, and palaces. This UNESCO World Heritage Site offers a vibrant mix of Hindu and Buddhist traditions, bustling streets, and historic architecture.",
+  "bestTimeToVisit": "September to December, February to May",
+  "duration": "2-4 days",
+  "distance": "0 km (capital city)",
+  "elevation": "1,400 m",
   "highlights": [
-    "Lo Manthang (Ancient Walled City)",
-    "Muktinath Temple",
-    "Kagbeni Village",
-    "Chhoser Cave Monasteries",
-    "Nilgiri and Dhaulagiri Mountain Views"
+    "Swayambhunath (Monkey Temple)",
+    "Pashupatinath Temple",
+    "Boudhanath Stupa",
+    "Kathmandu Durbar Square",
+    "Thamel shopping and nightlife"
   ],
-  "gallery": ["/mustang1.jpg", "/mustang2.jpg", "/mustang3.jpg"],
+  "gallery": ["/kathmandu1.jpg", "/kathmandu2.jpg", "/kathmandu3.jpg"],
   "guides": [
     {
-      "id": 3,
-      "name": "Tashi Gurung",
+      "id": 10,
+      "name": "Sanjay Shrestha",
       "image": "/male-guide.jpg",
+      "rating": 4.8,
+      "packageCount": 22,
+      "priceFrom": 40
+    },
+    {
+      "id": 11,
+      "name": "Asha Lama",
+      "image": "/female-guide.jpg",
       "rating": 4.9,
-      "packageCount": 15,
-      "priceFrom": 60
+      "packageCount": 18,
+      "priceFrom": 45
     }
   ],
   "hotels": [
-    { "name": "Royal Mustang Resort", "rating": 4.8, "pricePerNight": "$150+" },
-    { "name": "Lo Manthang Guest House", "rating": 4.5, "pricePerNight": "$90+" },
-    { "name": "Jomsom Mountain Lodge", "rating": 4.2, "pricePerNight": "$70+" }
+    { "name": "Hotel Yak & Yeti", "rating": 4.5, "pricePerNight": "$80-150" },
+    { "name": "Kathmandu Guest House", "rating": 4.2, "pricePerNight": "$50-100" },
+    { "name": "Hotel Shanker", "rating": 4.3, "pricePerNight": "$70-120" }
   ],
   "attractions": [
     {
-      "name": "Lo Manthang Monasteries",
-      "distance": "2 km",
-      "description": "Historic monasteries preserving Tibetan Buddhist art and culture"
+      "name": "Pashupatinath Temple",
+      "distance": "4 km from Thamel",
+      "description": "Sacred Hindu temple complex dedicated to Lord Shiva"
     },
     {
-      "name": "Chhoser Cave",
-      "distance": "8 km",
-      "description": "Ancient cave dwellings carved into sandstone cliffs"
+      "name": "Boudhanath Stupa",
+      "distance": "6 km from city center",
+      "description": "Massive Buddhist stupa and spiritual hub for Tibetan Buddhism"
     },
     {
-      "name": "Muktinath Temple",
-      "distance": "50 km",
-      "description": "Sacred Hindu and Buddhist pilgrimage site at high altitude"
+      "name": "Swayambhunath Stupa",
+      "distance": "3 km from Thamel",
+      "description": "Iconic Monkey Temple offering panoramic views of Kathmandu"
+    },
+    {
+      "name": "Patan Durbar Square",
+      "distance": "5 km south of Kathmandu",
+      "description": "Ancient palace complex showcasing Newar art and architecture"
+    },
+    {
+      "name": "Thamel",
+      "distance": "City center",
+      "description": "Tourist district known for shops, cafes, and vibrant nightlife"
     }
   ],
   "tips": [
-    "Obtain a special permit before traveling to Upper Mustang",
-    "Pack warm clothing for cold, windy conditions",
-    "Respect local customs and monasteries",
-    "Hire a local guide for navigation and culture",
-    "Stay hydrated and acclimatize properly"
+    "Carry cash — some areas do not accept cards",
+    "Dress modestly when visiting temples and stupas",
+    "Avoid street food if you’re not used to it",
+    "Use taxis or ride-sharing apps for convenience",
+    "Explore early morning to avoid traffic"
   ],
-  "coordinates": { "lat": 28.9985, "lng": 83.9583 },
-  "src": "https://www.google.com/maps/embed?pb=!4v1761957237466!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJREVtZnlnTGc.!2m2!1d28.7634842435707!2d83.71651528900354!3f200.42577548879459!4f5.660566823927169!5f0.7820865974627469"
+  "coordinates": { "lat": 27.7172, "lng": 85.3240 },
+  "src": "https://www.google.com/maps/embed?pb=!4v1761958903412!6m8!1m7!1sCAoSLEdNQWRrQ0FBSUFBQUFBSUFBQUFBSUFBQUFBSUFBQUFBSUFB!2m2!1d27.7172!2d85.3240!3f90!4f0!5f0.7820865974627469"
 },
 
     {
@@ -388,7 +406,78 @@
       ],
       "coordinates": { "lat": 28.5293, "lng": 83.8738 },
       "src": "https://www.google.com/maps/embed?pb=!4v1761956809862!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ0UxTHZrSkE.!2m2!1d28.5303304006311!2d83.87790492970993!3f61.89542!4f0!5f0.7820865974627469"
+    },
+    {
+  "id": 7,
+  "name": "Upper Mustang",
+  "country": "Mustang, Nepal",
+  "image": "/mustang1.jpg",
+  "rating": 4.8,
+  "reviews": 1876,
+  "description": "The Upper Mustang trek takes you into the ancient Kingdom of Lo, a restricted area showcasing Tibetan-influenced culture, desert landscapes, and centuries-old monasteries. It offers a rare glimpse into one of the most preserved regions of Nepal.",
+  "bestTimeToVisit": "April to November",
+  "duration": "10-14 days",
+  "distance": "80 km from Jomsom to Lo Manthang",
+  "elevation": "3,840 m (Lo Manthang)",
+  "highlights": [
+    "Ancient walled city of Lo Manthang",
+    "Caves of Chhoser",
+    "Tibetan-influenced culture and monasteries",
+    "Unique desert landscape",
+    "Panoramic views of Nilgiri and Dhaulagiri ranges"
+  ],
+  "gallery": ["/mustang1.jpg", "/mustang2.jpg", "/mustang3.jpg"],
+  "guides": [
+    {
+      "id": 8,
+      "name": "Tsering Lama",
+      "image": "/male-guide.jpg",
+      "rating": 4.9,
+      "packageCount": 12,
+      "priceFrom": 90
+    },
+    {
+      "id": 9,
+      "name": "Karma Gurung",
+      "image": "/male-guide.jpg",
+      "rating": 4.7,
+      "packageCount": 10,
+      "priceFrom": 85
     }
+  ],
+  "hotels": [
+    { "name": "Lo Manthang Guest House", "rating": 3.8, "pricePerNight": "$25-50" },
+    { "name": "Mustang Eco Lodge", "rating": 4.0, "pricePerNight": "$30-60" },
+    { "name": "Red Cliff Hotel", "rating": 4.2, "pricePerNight": "$35-70" }
+  ],
+  "attractions": [
+    {
+      "name": "Lo Manthang",
+      "distance": "Main destination",
+      "description": "The ancient walled city and cultural capital of Upper Mustang"
+    },
+    {
+      "name": "Chhoser Caves",
+      "distance": "7 km from Lo Manthang",
+      "description": "Man-made caves carved into cliffs, dating back hundreds of years"
+    },
+    {
+      "name": "Kagbeni",
+      "distance": "Gateway to Upper Mustang",
+      "description": "Beautiful village blending Tibetan and Nepali culture"
+    }
+  ],
+  "tips": [
+    "Carry your special permit for restricted areas",
+    "Be prepared for dry, windy weather",
+    "Bring warm clothes for cold nights",
+    "Carry cash — ATMs are rare",
+    "Respect local traditions and monasteries"
+  ],
+  "coordinates": { "lat": 29.1750, "lng": 83.9620 },
+  "src": "https://www.google.com/maps/embed?pb=!4v1761956809862!6m8!1m7!1sCAoSLEdNQWRrQ0FBSUFBQUFBSUFBQUFBSUFBQUFBSUFBQUFBSUFB!2m2!1d29.1750!2d83.9620!3f61.89542!4f0!5f0.7820865974627469"
+}
+
   ],
   "guides": [
     {

@@ -12,7 +12,7 @@ export default function Footer() {
               <img src="/mmg_logo.png" className="h-15"/>
               <img src="/mmg.jpg" className="h-10"/>
             </div>
-            <p className="text-blue-100">Connect with verified local guides for authentic travel experiences</p>
+            <p className="text-blue-100">Connect with verified local guides for authentic travel experiences, Get freedom while traveling</p>
           </div>
 
           <div>
@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-blue-900 pt-8 text-center text-blue-100">
-          <p>&copy; 2025 LocalGuide. All rights reserved.</p>
+          <p>&copy; 2025 MEETMYGUIDE. All rights reserved.</p>
         </div>
       </div>
     </footer>
