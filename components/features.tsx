@@ -32,7 +32,7 @@ export default function Features() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, idx) => (
             <div key={idx} className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
-              <div className="w-12 h-12 rounded-lg bg-cyan-600 flex items-center justify-center mb-4 text-2xl">
+              <div className="w-12 h-12 rounded-lg bg-cyan-200 flex items-center justify-center mb-4 text-2xl">
                 {feature.icon}
               </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">{feature.title}</h3>
