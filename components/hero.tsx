@@ -1,20 +1,91 @@
 "use client"
 
+import { useEffect, useRef } from 'react'
 import Link from "next/link"
 
+// Extend Window interface for klouds
+declare global {
+  interface Window {
+    klouds?: {
+      create: (options: {
+        selector: string
+        speed?: number
+        layerCount?: number
+        cloudColor1?: string
+        cloudColor2?: string
+        bgColor?: string
+      }) => any
+    }
+  }
+}
+
 export default function Hero() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    // Load klouds script dynamically
+    const script = document.createElement('script')
+    script.src = 'https://unpkg.com/klouds@2.1.1/lib/klouds.min.js'
+    script.async = false
+    
+    script.onload = () => {
+      console.log('Klouds loaded')
+      if (canvasRef.current && window.klouds) {
+        try {
+          const cloudInstance = window.klouds.create({
+            selector: '#cloudsCanvas',
+            speed: 1,
+            layerCount: 5,
+            cloudColor1: '#ffffff',
+            cloudColor2: '#e0f2fe',
+            bgColor: '#0891b2'
+          })
+          console.log('Clouds initialized:', cloudInstance)
+        } catch (error) {
+          console.error('Error initializing clouds:', error)
+        }
+      }
+    }
+    
+    script.onerror = () => {
+      console.error('Failed to load klouds library')
+    }
+    
+    document.body.appendChild(script)
+    
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script)
+      }
+    }
+  }, [])
+
   return (
-    <section className="relative overflow-hidden text-white" >
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    <section className="relative overflow-hidden text-white">
+      {/* Canvas Container with explicit dimensions */}
+      <div className="absolute inset-0" style={{ width: '100%', height: '100vh', zIndex: 0 }}>
+        <canvas 
+          id="cloudsCanvas"
+          ref={canvasRef}
+          style={{ 
+            width: '100%',
+            height: '100%',
+            display: 'block'
+          }}
+        />
       </div>
 
-      <div className="relative p-30 bg-gradient-to-b from-cyan-600 to-white">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/30" style={{ zIndex: 1 }}></div>
+
+      {/* Content */}
+      <div className="relative py-20 px-6 md:px-12 min-h-screen flex items-center" style={{ zIndex: 3 }}>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
           <div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">Travel Like a Local</h1>
-            <p className="text-xl text-cyan-100 mb-8 max-w-lg">
+            <h1 className="text-5xl md:text-6xl text-cyan-900 font-bold mb-6 leading-tight drop-shadow-lg">
+              Travel Like a Local
+            </h1>
+            <p className="text-xl text-cyan-800 mb-8 max-w-lg ">
               Skip the tourist traps. Book verified local guides directly and experience authentic destinations tailored
               to your interests.
             </p>
@@ -22,37 +93,40 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/packages"
-                className="px-8 py-3 text-white rounded-lg font-semibold transition text-center"
-                style={{ backgroundColor: "var(--color-accent)" }}
+                className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-semibold transition text-center shadow-lg"
               >
                 Find a Guide
               </Link>
               <Link
                 href="/become-guide"
-                className="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white transition text-center hover:text-gray-500"
+                className="px-8 py-3 border-2 border-white text-cyan-800 rounded-lg font-semibold hover:bg-white hover:text-cyan-600 transition text-center shadow-lg backdrop-blur-sm"
               >
                 Become a Guide
               </Link>
             </div>
 
-            <div className="mt-12 grid grid-cols-3 gap-4">
-              <div>
-                <p className="text-3xl text-gray-500 font-bold">50K+</p>
-                <p className="text-cyan-500">Verified Guides</p>
+            <div className="mt-12 grid grid-cols-3 gap-4 ">
+              <div className="backdrop-blur-sm bg-white/10 p-4 rounded-lg">
+                <p className="text-3xl text-gray-500 font-bold drop-shadow-lg">50K+</p>
+                <p className="text-cyan-800 drop-shadow">Verified Guides</p>
               </div>
-              <div>
-                <p className="text-3xl text-gray-500 font-bold">100K+</p>
-                <p className="text-cyan-500">Trips Completed</p>
+              <div className="backdrop-blur-sm bg-white/10 p-4 rounded-lg">
+                <p className="text-3xl text-gray-500 font-bold drop-shadow-lg">100K+</p>
+                <p className="text-cyan-800 drop-shadow">Trips Completed</p>
               </div>
-              <div>
-                <p className="text-3xl text-gray-500 font-bold">4.9★</p>
-                <p className="text-cyan-500">Avg Rating</p>
+              <div className="backdrop-blur-sm bg-white/10 p-4 rounded-lg">
+                <p className="text-3xl text-gray-500 font-bold drop-shadow-lg">4.9★</p>
+                <p className="text-cyan-800 drop-shadow">Avg Rating</p>
               </div>
             </div>
           </div>
 
-          <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-2xl bg-slate-200">
-            <img src="/everest.webp" alt="Travel adventure" className="w-full h-full object-cover" />
+          <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <img 
+              src="/everest.webp" 
+              alt="Travel adventure" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
