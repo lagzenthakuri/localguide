@@ -361,7 +361,7 @@ export default function GuidesPage() {
 
                       {/* CTA */}
                       <div className="flex items-center justify-between">
-                        <p className="text-lg font-bold text-cyan-600">{guide.hourlyRate}/hour</p>
+                        <p className="text-lg font-bold text-cyan-600">{guide.hourlyRate}/day</p>
                         <button className="px-4 py-2 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-all">
                           View
                         </button>

@@ -346,7 +346,7 @@ export default function GuidePage({ params }: PageProps) {
                   <Button className="bg-cyan-600 hover:bg-cyan-700 text-white font-bold">Send Offer</Button>
                 </div>
                 <p className="text-xs text-slate-600 mt-2">
-                  Original price: ${guide.hourlyRate}/hour | Your offer: ${bargainPrice}/hour (
+                  Original price: ${guide.hourlyRate}/hour | Your offer: ${bargainPrice}/day (
                   {guide.hourlyRate - bargainPrice > 0 ? "-" : ""}${Math.abs(guide.hourlyRate - bargainPrice)})
                 </p>
               </div>
