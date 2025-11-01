@@ -117,7 +117,7 @@ export default function Hero() {
                 Find a Guide
               </Link>
               <Link
-                href="/become-guide"
+                href="/guide-verification"
                 className="px-8 py-3 border-2 border-white text-cyan-800 rounded-lg font-semibold hover:bg-white hover:text-cyan-600 transition text-center shadow-lg backdrop-blur-sm"
               >
                 Become a Guide

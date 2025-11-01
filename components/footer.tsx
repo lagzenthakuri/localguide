@@ -45,7 +45,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">For Guides</h4>
             <ul className="space-y-2 text-blue-100">
               <li>
-                <Link href="/become-guide" className="hover:text-white transition">
+                <Link href="/guide-verification" className="hover:text-white transition">
                   Become a Guide
                 </Link>
               </li>
