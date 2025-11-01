@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from "next/link"
 
 // Extend Window interface for klouds
@@ -21,9 +21,27 @@ declare global {
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  
+  const images = [
+    '/iamge/2.png',
+    '/iamge/3.png',
+  ]
 
   useEffect(() => {
-    // Load klouds script dynamically
+    const interval = setInterval(() => {
+      setIsTransitioning(true)
+      setTimeout(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length)
+        setIsTransitioning(false)
+      }, 500) // Half of transition duration for crossfade effect
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
     const script = document.createElement('script')
     script.src = 'https://unpkg.com/klouds@2.1.1/lib/klouds.min.js'
     script.async = false
@@ -70,7 +88,8 @@ export default function Hero() {
           style={{ 
             width: '100%',
             height: '100%',
-            display: 'block'
+            display: 'block',
+            transition:'fade'
           }}
         />
       </div>
@@ -123,9 +142,12 @@ export default function Hero() {
 
           <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
             <img 
-              src="/everest.webp" 
+              src={images[currentImageIndex]} 
               alt="Travel adventure" 
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover transition-opacity duration-1000 ${
+                isTransitioning ? 'opacity-0' : 'opacity-100'
+              }`}
+              key={currentImageIndex}
             />
           </div>
         </div>
