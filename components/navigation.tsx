@@ -8,13 +8,8 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-2">
-            <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold"
-              style={{ backgroundColor: "#0891b2" }}
-            >
-              LG
-            </div>
-            <span className="font-bold text-lg hidden sm:inline text-slate-900">LocalGuide</span>
+            <img src="/mmg_logo.jpg" className="h-15"/>
+            <img src="/mmg.jpg" className="h-10"/>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">

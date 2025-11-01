@@ -9,10 +9,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-(--color-primary) flex items-center justify-center font-bold">
-                LG
-              </div>
-              <span className="font-bold text-lg">LocalGuide</span>
+              <img src="/mmg_logo.png" className="h-15"/>
+              <img src="/mmg.jpg" className="h-10"/>
             </div>
             <p className="text-blue-100">Connect with verified local guides for authentic travel experiences</p>
           </div>
