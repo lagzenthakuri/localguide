@@ -38,7 +38,7 @@ export default function Hero() {
             layerCount: 5,
             cloudColor1: '#ffffff',
             cloudColor2: '#e0f2fe',
-            bgColor: '#0891b2'
+            bgColor: '#6cdcf8ff'
           })
           console.log('Clouds initialized:', cloudInstance)
         } catch (error) {

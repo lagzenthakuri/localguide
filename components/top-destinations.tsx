@@ -5,7 +5,7 @@ import Link from "next/link"
 const destinations = [
   {
     id: 1,
-    name: "Mt. Everest",
+    name: "Everest Base Camp",
     region: "Nepal",
     guides: 128,
     image: "/everest.webp",
