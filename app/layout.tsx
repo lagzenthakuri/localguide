@@ -7,7 +7,7 @@ import Authprovider from "@/providers/auth-provider";
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "LocalGuide - Direct Booking with Verified Guides",
+  title: "MeetMyGuide - Direct Booking with Verified Guides",
   description: "Connect with verified local guides for authentic travel experiences",
   icons:"./mmg_logo.png"
 }
