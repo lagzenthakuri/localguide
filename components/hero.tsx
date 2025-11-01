@@ -102,7 +102,7 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
           <div>
             <h1 className="text-5xl md:text-6xl text-cyan-900 font-bold mb-6 leading-tight drop-shadow-lg">
-              Travel Like a Local
+              Travel With Verified Local Guides
             </h1>
             <p className="text-xl text-cyan-800 mb-8 max-w-lg ">
               Skip the tourist traps. Book verified local guides directly and experience authentic destinations tailored
